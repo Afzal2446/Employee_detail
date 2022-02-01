@@ -1,0 +1,42 @@
+[
+    {
+            "ID":1,
+            "Name":"Afzal",
+            "Team":"Thugs",
+            "Team_Members":"Afzal,riya",
+            "Current_Task":"Employee Details",
+            "Status":"In Progress"
+          },
+          {
+            "ID":2,
+            "Name":"Riya",
+            "Team":"Thugs",
+            "Team_Members":"Afzal,riya",
+            "Current_Task":"Employee Details",
+            "Status":"Completed"
+          },
+          {
+            "ID":3,
+            "Name":"Shubhankit",
+            "Team":"Thugs",
+            "Team_Members":"Shubhankit, Pranav, Krupa",
+            "Current_Task":"API Developement",
+            "Status":"In Progress"
+          },
+          {
+            "ID":4,
+            "Name":"Pranav AS",
+            "Team":"Thugs",
+            "Team_Members":"Pranav, Shubhankit, Krupa",
+            "Current_Task":"API Developement",
+            "Status":"In Progress"
+          },
+          {
+            "ID":4,
+            "Name":"KrupaShankar",
+            "Team":"Thugs",
+            "Team_Members":"Shubhankit, Pranav, Krupa",
+            "Current_Task":"API Developement",
+            "Status":"Completed"
+          }
+]
