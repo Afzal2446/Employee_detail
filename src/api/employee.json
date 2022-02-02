@@ -1,42 +1,219 @@
 [
     {
             "ID":1,
-            "Name":"Afzal",
-            "Team":"Thugs",
-            "Team_Members":"Afzal,riya",
-            "Current_Task":"Employee Details",
-            "Status":"In Progress"
+            "Name":"Vishal Babu Meriga",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"need to update"
           },
           {
             "ID":2,
-            "Name":"Riya",
-            "Team":"Thugs",
-            "Team_Members":"Afzal,riya",
-            "Current_Task":"Employee Details",
-            "Status":"Completed"
+            "Name":"Dhiraj Kumar Bairagi",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
           },
           {
             "ID":3,
-            "Name":"Shubhankit",
-            "Team":"Thugs",
-            "Team_Members":"Shubhankit, Pranav, Krupa",
-            "Current_Task":"API Developement",
-            "Status":"In Progress"
+            "Name":"Shaik Karimulla",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"need to update"
           },
           {
             "ID":4,
+            "Name":"Govindu V KoteswaraRao",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":5,
+            "Name":"Kuppala Srikanth",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"need to update"
+          },
+          {
+            "ID":6,
+            "Name":"Ryan Kurlish",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+
+          {
+            "ID":9,
+            "Name":"Sushmitha Chitteti",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"need to update"
+          },
+          {
+            "ID":10,
+            "Name":"Keshab Chandra Nayak",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":11,
+            "Name":"Visam Praveen Chand",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Dont't Know",
+            "Status":"need to be updated"
+          },
+          {
+            "ID":12,
+            "Name":"Haritha Medari",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":13,
+            "Name":"Saurav Kumar",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":14,
+            "Name":"Mahesh Baherji",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":15,
             "Name":"Pranav AS",
-            "Team":"Thugs",
-            "Team_Members":"Pranav, Shubhankit, Krupa",
-            "Current_Task":"API Developement",
-            "Status":"In Progress"
-          },
-          {
-            "ID":4,
-            "Name":"KrupaShankar",
             "Team":"Thugs",
             "Team_Members":"Shubhankit, Pranav, Krupa",
             "Current_Task":"API Developement",
             "Status":"Completed"
+          },
+          {
+            "ID":16,
+            "Name":"Krupasankar Vemuluri",
+            "Team":"Thugs",
+            "Team_Members":"Shubhankit, Pranav, Krupa",
+            "Current_Task":"API Developement",
+            "Status":"Completed"
+          },
+          {
+            "ID":17,
+            "Name":"Shubhankit Tiwari",
+            "Team":"Thugs",
+            "Team_Members":"Shubhankit, Pranav, Krupa",
+            "Current_Task":"API Developement",
+            "Status":"In Progress"
+          },
+          {
+            "ID":18,
+            "Name":"Battini Vikram",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":19,
+            "Name":"Kompella Sri Sita Rama",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":20,
+            "Name":"Kritika Nahata",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":21,
+            "Name":"Mastan Sharief",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":22,
+            "Name":"Nibedita Panda",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":23,
+            "Name":"NimmaKayala Rameshnaidu",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":24,
+            "Name":"Pranay Kumar Boga",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":25,
+            "Name":"Rohith Chowdary Eluri",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":26,
+            "Name":"Sai Krishna Dharmavarapu",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":27,
+            "Name":"SaiKrishna Nagilla",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":28,
+            "Name":"Sandeep Kumar Suram",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
+          },
+          {
+            "ID":29,
+            "Name":"Suryaprakash Reddy Kodur",
+            "Team":"Stadium",
+            "Team_Members":"Don't know",
+            "Current_Task":"Don't know",
+            "Status":"Need to be updated"
           }
 ]

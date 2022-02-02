@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
   }
   set filter(value:string){
     this._filter=value;
-    console.log('In setter',value);
+    console.warn('In setter',value);
     this.filterEmployee=this.performFilter(value);
   }
 

@@ -4,5 +4,5 @@ export class employeeData{
     Team:string;
     Team_Members:string;
     Current_Task:string;
-    Status:string
+    Status:string;
 }

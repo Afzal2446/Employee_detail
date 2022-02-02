@@ -3,97 +3,46 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Employee Table</h4>
-                        <p class="card-category">Here is the Employee all details</p>
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title ">Task</h4>
+                        <p class="card-category">Here is all task detail</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <div class="row">
+                                <div class="col-md-2">Filter By Task:</div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="input" [(ngModel)]='filter'>
+                                </div>
+                              </div>
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        ID
+                                        Task
                                     </th>
                                     <th>
-                                        Name
+                                        Assigned to
                                     </th>
                                     <th>
-                                        Team
+                                        Estimated date
                                     </th>
                                     <th>
-                                        Team Members
-                                    </th>
-                                    <th>
-                                        Current Task
+                                        Current Status
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let employee of employees">
+                                    <tr *ngFor="let task of filterTask">
                                         <td>
-                                            {{employee.ID}}
-                                        </td>
-                                        <td>
-                                            {{employee.Name}}
+                                            {{task.Task}}
                                         </td>
                                         <td>
-                                            {{employee.Tey}}
+                                            {{task.Assigned_To}}
                                         </td>
                                         <td>
-                                            {{employee.CTeam Members}
-                                        </td>
-                                        <td class="text-primary">
-                                            {{employee.SCurrent Task}
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="card card-plain">
-                    <div class="card-header card-header-danger">
-                        <h4 class="card-title mt-0"> Employee Table on Plain Background</h4>
-                        <p class="card-category"> Here is list of Employee</p>
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="">
-                                    <th>
-                                        ID
-                                    </th>
-                                    <th>
-                                        Name
-                                    </th>
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        City
-                                    </th>
-                                    <th>
-                                        Salary
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let employee of employees">
-                                        <td>
-                                            {{employee.ID}}
+                                            {{task.Estimated_Date}}
                                         </td>
                                         <td>
-                                            {{employee.Name}}
-                                        </td>
-                                        <td>
-                                            {{employee.Country}}
-                                        </td>
-                                        <td>
-                                            {{employee.City}}
-                                        </td>
-                                        <td class="text-primary">
-                                            {{employee.Salary}}
+                                            {{task.Current_Status}}
                                         </td>
                                     </tr>
                                 </tbody>
