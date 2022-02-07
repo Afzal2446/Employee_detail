@@ -7,27 +7,27 @@
                       <div class="card-icon">
                           <i class="material-icons">content_copy</i>
                       </div>
-                      <p class="card-category">Used Space</p>
-                      <h3 class="card-title">49/50
-                          <small>GB</small>
+                      <p class="card-category">Employee</p>
+                      <h3 class="card-title">29
+                          <small>P</small>
                       </h3>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
                           <i class="material-icons text-danger">warning</i>
-                          <a href="javascript:void(0)">Get More Space...</a>
+                          <a href="javascript:void(0)">Get More info...</a>
                       </div>
                   </div>
               </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                  <div class="card-header card-header-success card-header-icon">
+                  <div class="card-header card-header-info card-header-icon">
                       <div class="card-icon">
                           <i class="material-icons">store</i>
                       </div>
-                      <p class="card-category">Revenue</p>
-                      <h3 class="card-title">$34,245</h3>
+                      <p class="card-category">Project Detail</p>
+                      <h3 class="card-title">3</h3>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
@@ -38,28 +38,28 @@
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                  <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-header card-header-success card-header-icon">
                       <div class="card-icon">
                           <i class="material-icons">info_outline</i>
                       </div>
                       <p class="card-category">Fixed Issues</p>
-                      <h3 class="card-title">75</h3>
+                      <h3 class="card-title">15</h3>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
-                          <i class="material-icons">local_offer</i> Tracked from Github
+                          <i class="material-icons">local_offer</i> Tracked from Software
                       </div>
                   </div>
               </div>
           </div>
           <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
-                  <div class="card-header card-header-info card-header-icon">
+                  <div class="card-header card-header-danger card-header-icon">
                       <div class="card-icon">
-                          <i class="fa fa-twitter"></i>
+                        <i class="material-icons">info_outline</i>
                       </div>
-                      <p class="card-category">Followers</p>
-                      <h3 class="card-title">+245</h3>
+                      <p class="card-category">pending Issue</p>
+                      <h3 class="card-title">8</h3>
                   </div>
                   <div class="card-footer">
                       <div class="stats">
@@ -74,7 +74,7 @@
           <div class="col-lg-12 col-md-12">
               <div class="card">
                   <div class="card-header card-header-success">
-                      <h4 class="card-title">Employees Details</h4>
+                      <h4 class="card-title">Team List</h4>
                   </div>
                   <div class="card-body table-responsive">
                       <div class="row">
@@ -83,33 +83,42 @@
                                 <input type="text" class="input" [(ngModel)]='filter'>
                         </div>
                       </div>
-                      <table class="table table-hover">
+                      <div class="row" >
+                        <button type="button" id="button" class="btn btn-primary btn-sm" (click)="buttonToggle()">{{showList? 'Hide ':
+                            'Show '}}List</button>
+                        </div>
+                      <table class="table table-hover" >
                           <thead class="text-warning">
                               <th>ID</th>
-                              <th>Name</th>
+                              <th (click)="sortEmployee('Name')">Name&nbsp;
+                                  <i class="fa fa-sort"></i>
+                              </th>
                               <th>Team</th>
                               <th>Team Members</th>
-                              <th>Current Task</th>
+                              <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
+                                <i class="fa fa-sort"></i>
+                              </th>
                               <th>Status</th>
                           </thead>
                           <tbody>
                             <tr *ngFor="let employee of filterEmployee">
-                                <td>
+                                <td *ngIf="showList">
                                     {{employee.ID}}
                                 </td>
-                                <td>
+                                <td *ngIf="showList"><a href="">
                                     {{employee.Name}}
+                                </a>
                                 </td>
-                                <td>
+                                <td *ngIf="showList">
                                     {{employee.Team}}
                                 </td>
-                                <td>
+                                <td *ngIf="showList">
                                    {{employee.Team_Members}}
                                 </td>
-                                <td class="text-primary">
+                                <td *ngIf="showList" class="text-primary">
                                    {{employee.Current_Task}}
                                 </td>
-                                <td>
+                                <td *ngIf="showList">
                                     {{employee.Status}}
                                 </td>
                             </tr>

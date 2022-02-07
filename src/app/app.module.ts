@@ -33,6 +33,7 @@ import { employeeData } from './dashboard/employee';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -40,6 +41,7 @@ import { employeeData } from './dashboard/employee';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

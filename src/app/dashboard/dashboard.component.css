@@ -3,3 +3,8 @@
     width: 250px;
     border-color: green;
 }
+#showMore{
+    border-color: red;
+    margin-left: 300px;
+    /* margin:auto; */
+}

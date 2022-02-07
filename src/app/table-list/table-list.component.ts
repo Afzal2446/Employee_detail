@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,VERSION } from '@angular/core';
 import { employeeData } from 'app/dashboard/employee';
 import { EmpDataService } from 'app/service/emp-data.service';
 import { data } from 'jquery';
@@ -6,10 +6,10 @@ import { data } from 'jquery';
 @Component({
   selector: 'app-table-list',
   templateUrl: './table-list.component.html',
-  styleUrls: ['./table-list.component.css']
+  styleUrls: ['./table-list.component.css'],
 })
 export class TableListComponent implements OnInit {
-  constructor(private empData:EmpDataService) {}
+  constructor() {}
   taskList:any[]=[
     {
       "Task":"API Development",
@@ -62,5 +62,22 @@ export class TableListComponent implements OnInit {
 
   ngOnInit(){
     this.filter=''
+  }
+
+  isDisc:boolean=false;
+  sortTask(property) {
+    this.isDisc=!this.isDisc;
+    let direction= this.isDisc?1:-1;
+    this.filterTask.sort(function(a:any,b:any){
+      if(a[property]<b[property]){
+        return -1*direction;
+      }
+      else if(a[property]>b[property]){
+        return 1*direction;
+      }
+      else{
+        return 0;
+      }
+    });
   }
 }

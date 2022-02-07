@@ -39,5 +39,28 @@ export class DashboardComponent implements OnInit {
         this.filterEmployee=this.employees;
       }
     });
-  }     
+  }
+  showList:boolean=false; 
+  buttonToggle(){
+    this.showList= !this.showList;
+  }   
+  
+  // Filtering by name
+
+  isDisc:boolean=false;
+  sortEmployee(property) {
+    this.isDisc=!this.isDisc;
+    let direction= this.isDisc?1:-1;
+    this.filterEmployee.sort(function(a:any,b:any){
+      if(a[property]<b[property]){
+        return -1*direction;
+      }
+      else if(a[property]>b[property]){
+        return 1*direction;
+      }
+      else{
+        return 0;
+      }
+    });
+  }
 }

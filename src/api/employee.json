@@ -47,6 +47,22 @@
             "Current_Task":"Don't know",
             "Status":"Need to be updated"
           },
+          {
+            "ID":7,
+            "Name":"Afzal husain",
+            "Team":"Thugs",
+            "Team Members":"Afzal, Riya",
+            "Current_Task":"Employee Details",
+            "Status":"In Progress"
+          },
+          {
+            "ID":8,
+            "Name":"Riya Mishra",
+            "Team":"Thugs",
+            "Team Members":"Afzal, Riya",
+            "Current_Task":"Employee Details",
+            "Status":"In Progress"
+          },
 
           {
             "ID":9,
@@ -216,4 +232,4 @@
             "Current_Task":"Don't know",
             "Status":"Need to be updated"
           }
-]
+  ]

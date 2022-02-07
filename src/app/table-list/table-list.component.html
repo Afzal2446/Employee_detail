@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Task</h4>
+                        <h4 class="card-title ">Team Task</h4>
                         <p class="card-category">Here is all task detail</p>
                     </div>
                     <div class="card-body">
@@ -17,11 +17,13 @@
                               </div>
                             <table class="table">
                                 <thead class=" text-primary">
-                                    <th>
-                                        Task
+                                    <th (click)="sortTask('Task')">
+                                        Task&nbsp;
+                                        <i class="fa fa-sort"></i>
                                     </th>
-                                    <th>
-                                        Assigned to
+                                    <th (click)="sortTask('Assigned_To')">
+                                        Assigned to&nbsp;
+                                        <i class="fa fa-sort"></i>
                                     </th>
                                     <th>
                                         Estimated date
