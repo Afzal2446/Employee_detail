@@ -8,12 +8,25 @@ import { Observable } from 'rxjs';
 })
 export class EmpDataService {
 
+  private selectedEmployee: {
+    name: string,
+    task: string
+  };
+
   public url="api/employee.json";
   constructor(private http:HttpClient) { }
   employee():Observable<employeeData[]>{
     return this.http.get<employeeData[]>(this.url);
   }
-  saveUsers(data:any){
-    return this.http.post(this.url, data);
+  // saveUsers(data:any){
+  //   return this.http.post(this.url, data);
+  // }
+
+  setSelectedEmployee(employee: any) {
+    this.selectedEmployee = employee;
+  }
+
+  getSelectedEmploee() {
+    return this.selectedEmployee;
   }
 }

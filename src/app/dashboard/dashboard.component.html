@@ -1,132 +1,135 @@
 <div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-warning card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">content_copy</i>
-                      </div>
-                      <p class="card-category">Employee</p>
-                      <h3 class="card-title">29
-                          <small>P</small>
-                      </h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons text-danger">warning</i>
-                          <a href="javascript:void(0)">Get More info...</a>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-info card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">store</i>
-                      </div>
-                      <p class="card-category">Project Detail</p>
-                      <h3 class="card-title">3</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">date_range</i> Last 24 Hours
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-success card-header-icon">
-                      <div class="card-icon">
-                          <i class="material-icons">info_outline</i>
-                      </div>
-                      <p class="card-category">Fixed Issues</p>
-                      <h3 class="card-title">15</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">local_offer</i> Tracked from Software
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-6">
-              <div class="card card-stats">
-                  <div class="card-header card-header-danger card-header-icon">
-                      <div class="card-icon">
-                        <i class="material-icons">info_outline</i>
-                      </div>
-                      <p class="card-category">pending Issue</p>
-                      <h3 class="card-title">8</h3>
-                  </div>
-                  <div class="card-footer">
-                      <div class="stats">
-                          <i class="material-icons">update</i> Just Updated
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-      <div class="row">
-          <div class="col-lg-12 col-md-12">
-              <div class="card">
-                  <div class="card-header card-header-success">
-                      <h4 class="card-title">Team List</h4>
-                  </div>
-                  <div class="card-body table-responsive">
-                      <div class="row">
-                        <div class="col-md-2">Filter By:</div>
-                            <div class="col-md-4">
-                                <input type="text" class="input" [(ngModel)]='filter'>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">content_copy</i>
                         </div>
-                      </div>
-                      <div class="row" >
-                        <button type="button" id="button" class="btn btn-primary btn-sm" (click)="buttonToggle()">{{showList? 'Hide ':
-                            'Show '}}List</button>
+                        <p class="card-category">Employee</p>
+                        <h3 class="card-title">29
+                            <small>P</small>
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i>
+                            <a href="javascript:void(0)">Get More info...</a>
                         </div>
-                      <table class="table table-hover" >
-                          <thead class="text-warning">
-                              <th>ID</th>
-                              <th (click)="sortEmployee('Name')">Name&nbsp;
-                                  <i class="fa fa-sort"></i>
-                              </th>
-                              <th>Team</th>
-                              <th>Team Members</th>
-                              <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
-                                <i class="fa fa-sort"></i>
-                              </th>
-                              <th>Status</th>
-                          </thead>
-                          <tbody>
-                            <tr *ngFor="let employee of filterEmployee">
-                                <td *ngIf="showList">
-                                    {{employee.ID}}
-                                </td>
-                                <td *ngIf="showList"><a href="">
-                                    {{employee.Name}}
-                                </a>
-                                </td>
-                                <td *ngIf="showList">
-                                    {{employee.Team}}
-                                </td>
-                                <td *ngIf="showList">
-                                   {{employee.Team_Members}}
-                                </td>
-                                <td *ngIf="showList" class="text-primary">
-                                   {{employee.Current_Task}}
-                                </td>
-                                <td *ngIf="showList">
-                                    {{employee.Status}}
-                                </td>
-                            </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
-          </div>
-      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-info card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">store</i>
+                        </div>
+                        <p class="card-category">Project Detail</p>
+                        <h3 class="card-title">3</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">info_outline</i>
+                        </div>
+                        <p class="card-category">Fixed Issues</p>
+                        <h3 class="card-title">15</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">local_offer</i> Tracked from Software
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">info_outline</i>
+                        </div>
+                        <p class="card-category">pending Issue</p>
+                        <h3 class="card-title">8</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <h4 class="card-title">Team List</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <div class="row">
+                                <div class="col-md-2">Filter By:</div>
+                                <div class="col-md-4">
+                                    <input type="text" class="input" [(ngModel)]='filter'>
+                                </div>
+                            </div>
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th>ID</th>
+                                    <th (click)="sortEmployee('Name')">Name&nbsp;
+                                        <i class="fa fa-sort"></i>
+                                    </th>
+                                    <th>Team</th>
+                                    <th>Team Members</th>
+                                    <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
+                                        <i class="fa fa-sort"></i>
+                                    </th>
+                                    <th>Status</th>
+                                </thead>
+                                <tbody>
+
+                                    <tr *ngFor="let employee of filterEmployee">
+                                        <td *ngIf="true">
+                                            {{employee.ID}}
+                                        </td>
+                                        <td *ngIf="true">
+                                            <a routerLink="/icons" (click)="onEmployeeSelected(employee)">
+                                                {{employee.Name}}
+                                            </a>
+                                            <router-outlet></router-outlet>
+                                        </td>
+                                        <td *ngIf="true">
+                                            {{employee.Team}}
+                                        </td>
+                                        <td *ngIf="true">
+                                            {{employee.Team_Members}}
+                                        </td>
+                                        <td *ngIf="true" class="text-primary">
+                                            {{employee.Current_Task}}
+                                        </td>
+                                        <td *ngIf="true">
+                                            {{employee.Status}}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <button type="button" id="button" class="btn btn-primary btn-sm"
+                                    (click)="buttonToggle()">{{showList ? 'Hide ': 'Show '}}List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>

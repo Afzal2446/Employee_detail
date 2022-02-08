@@ -12,9 +12,9 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit() {
   }
-  sendData(data:any){
-    console.warn(data);
-    this.userData.saveUsers(data).subscribe((result)=>
-    console.warn(result));
-  }
+  // sendData(data:any){
+  //   console.warn(data);
+  //   this.userData.saveUsers(data).subscribe((result)=>
+  //   console.warn(result));
+  // }
 }

@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   employees:employeeData[]=[];
   filterEmployee:employeeData[]=[];
 
-  constructor(private empData:EmpDataService) {}
+  constructor(private empData: EmpDataService) {}
 
 
   private _filter:string='';
@@ -36,13 +36,16 @@ export class DashboardComponent implements OnInit {
     this.empData.employee().subscribe({
       next:employees=>{
         this.employees=employees;
-        this.filterEmployee=this.employees;
+        console.warn(this.employees);
+        this.filterEmployee=[...this.employees];
+        this.filterEmployee = this.filterEmployee.splice(0, 5);
       }
     });
   }
   showList:boolean=false; 
   buttonToggle(){
     this.showList= !this.showList;
+    this.showMoreRecords();
   }   
   
   // Filtering by name
@@ -62,5 +65,20 @@ export class DashboardComponent implements OnInit {
         return 0;
       }
     });
+  }
+
+  showMoreRecords() {
+    if (this.showList) {
+      this.filterEmployee = [...this.employees];
+      let employees = []
+      employees = [1,2,3,4,5]; // 1,5
+      let permanentEmployees = [...employees];
+    } else {
+      this.filterEmployee = this.filterEmployee.splice(0, 5);
+    }
+  }
+
+  onEmployeeSelected(employee: any) {
+    this.empData.setSelectedEmployee(employee);
   }
 }
