@@ -71,29 +71,27 @@
         </div>
         <div class="row">
             <div class="row">
-                <div class="col-lg-12 col-md-12">
+                <!-- Team list........ -->
+                <div class="col-lg-6 col-md-6">
                     <div class="card">
                         <div class="card-header card-header-success">
                             <h4 class="card-title">Team List</h4>
                         </div>
                         <div class="card-body table-responsive">
                             <div class="row">
-                                <div class="col-md-2">Filter By:</div>
+                                <!-- <div class="col-md-2">Filter:</div>
                                 <div class="col-md-4">
                                     <input type="text" class="input" [(ngModel)]='filter'>
-                                </div>
+                                </div> -->
                             </div>
+                            <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
                             <table class="table table-hover">
                                 <thead class="text-warning">
                                     <th>ID</th>
-                                    <th (click)="sortEmployee('Name')">Name&nbsp;
-                                        <i class="fa fa-sort"></i>
-                                    </th>
+                                    <th> Name</th>
                                     <th>Team</th>
                                     <th>Team Members</th>
-                                    <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
-                                        <i class="fa fa-sort"></i>
-                                    </th>
+                                    <th>Current Task</th>
                                     <th>Status</th>
                                 </thead>
                                 <tbody>
@@ -103,10 +101,10 @@
                                             {{employee.ID}}
                                         </td>
                                         <td *ngIf="true">
-                                            <a routerLink="/icons" (click)="onEmployeeSelected(employee)">
-                                                {{employee.Name}}
-                                            </a>
-                                            <router-outlet></router-outlet>
+                                            <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
+                                            {{employee.Name}}
+                                            <!-- </a> -->
+                                            <!-- <router-outlet></router-outlet> -->
                                         </td>
                                         <td *ngIf="true">
                                             {{employee.Team}}
@@ -125,7 +123,59 @@
                             </table>
                             <div class="row">
                                 <button type="button" id="button" class="btn btn-primary btn-sm"
-                                    (click)="buttonToggle()">{{showList ? 'Hide ': 'Show '}}List</button>
+                                    (click)="toggleEmployee()">{{showListEmployee ? 'Hide ': 'See '}}
+                                        More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Task list -->
+                <div class="col-lg-6 col-md-6">
+                    <div class="card">
+                        <div class="card-header card-header-success">
+                            <h4 class="card-title ">Team Task</h4>
+                            <!-- <p class="card-category">Here is all task detail</p> -->
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <div class="row">
+                                    <!-- <div class="col-md-2">Filter:</div>
+                                        <div class="col-md-4">
+                                            <input type="text" class="input" [(ngModel)]='taskFilter'>
+                                    </div> -->
+                                  </div>
+                                <table class="table">
+                                    <thead class=" text-primary">
+                                        <th>Task</th>
+                                        <th>Assigned to</th>
+                                        <th>Estimated date</th>
+                                        <th>Current Status</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let task of filterTask">
+                                            <td>
+                                                {{task.Task}}
+                                            </td>
+                                            <td>
+                                                {{task.Assigned_To}}
+                                            </td>
+                                            <td>
+                                                {{task.required_Day}}
+                                            </td>
+                                            <td>
+                                               {{task.Current_Status}}
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="row">
+                                    <button type="button" id="button" class="btn btn-primary btn-sm"
+                                        (click)="toggleTask()">{{showListTask ? 'Hide ': 'See '}}
+                                            More
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>

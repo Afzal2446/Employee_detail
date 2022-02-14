@@ -5,35 +5,35 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './typography.component.html',
   styleUrls: ['./typography.component.css']
 })
-export class TypographyComponent implements OnInit {
+export class typographyComponent implements OnInit {
 
   constructor() { }
 
-  environmentList=[
+  typographyList=[
     {
-      "Environment":"BetMgm",
+      "typography":"BetMgm",
       "build_Version":"2.6.2",
       "Features":"Banking realted",
       "QA_Status":"In Progress"
     },{
-      "Environment":"Nevada",
+      "typography":"Nevada",
       "build_Version":"3.8.1",
       "Features":"Betting realted",
       "QA_Status":"Completed"
     },{
-      "Environment":"Enatain",
+      "typography":"Enatain",
       "build_Version":"4.7.9",
       "Features":"Gaming based",
       "QA_Status":"On Hold"
     },{
-      "Environment":"Ivy",
+      "typography":"Ivy",
       "build_Version":"9.6.7",
       "Features":"Indian betting plateform",
       "QA_Status":"In Progress"
     }
   ];
 
-  filterEnvironments:any[]=[];
+  filtertypographys:any[]=[];
 
   private _filter:string='';
   get filter():string{
@@ -42,12 +42,12 @@ export class TypographyComponent implements OnInit {
   set filter(value:string){
     this._filter=value;
     console.warn('In setter',value);
-    this.filterEnvironments=this.performFilter(value);
+    this.filtertypographys=this.performFilter(value);
   }
   performFilter(filterBy:string):any[]{
     filterBy=filterBy.toLocaleLowerCase();
-    return this.environmentList.filter((list:any)=>
-      list.Environment.toLocaleLowerCase().includes(filterBy) || 
+    return this.typographyList.filter((list:any)=>
+      list.typography.toLocaleLowerCase().includes(filterBy) || 
       list.Features.toLocaleLowerCase().includes(filterBy) || 
       list.QA_Status.toLocaleLowerCase().includes(filterBy));
   }
@@ -55,12 +55,71 @@ export class TypographyComponent implements OnInit {
   ngOnInit() {
     this.filter='';
   }
-
+  nodes: any = [
+    {
+      name: 'Pranav AS',
+      cssClass: 'ngx-org-ceo',
+      image: '',
+      title: 'Chief Executive Officer',
+      childs: [
+        {
+          name: 'Afzal',
+          cssClass: 'ngx-org-ceo',
+          image: 'assets/node.svg',
+          title: 'CEO, Google Cloud',
+        },
+        {
+          name: 'Shubhankit',
+          cssClass: 'ngx-org-ceo',
+          image: 'assets/node.svg',
+          title: 'CEO, YouTube',
+          childs: [
+            {
+              name: 'Krupashankar',
+              cssClass: 'ngx-org-head',
+              image: 'assets/node.svg',
+              title: 'Global Head of Business Operations',
+              childs: []
+            },
+            {
+              name: 'Riya Mishra',
+              cssClass: 'ngx-org-vp',
+              image: 'assets/node.svg',
+              title: 'VP, Agency and Brand Solutions',
+              childs: []
+            },
+            {
+              name: 'Ariel Bardin',
+              cssClass: 'ngx-org-vp',
+              image: 'assets/node.svg',
+              title: 'VP, Product Management',
+              childs: []
+            }
+          ]
+        },
+        {
+          name: 'Riya mishra',
+          cssClass: 'ngx-org-head',
+          image: 'assets/node.svg',
+          title: 'Head of Artificial Intelligence',
+          childs: [
+            {
+              name: 'David Feinberg',
+              cssClass: 'ngx-org-ceo',
+              image: 'assets/node.svg',
+              title: 'CEO, Google Health',
+              childs: []
+            }
+          ]
+        }
+      ]
+    }
+  ];
   isDisc:boolean=false;
-  sortEnvironment(property) {
+  sorttypography(property) {
     this.isDisc=!this.isDisc;
     let direction= this.isDisc?1:-1;
-    this.filterEnvironments.sort(function(a:any,b:any){
+    this.filtertypographys.sort(function(a:any,b:any){
       if(a[property]<b[property]){
         return -1*direction;
       }

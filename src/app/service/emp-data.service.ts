@@ -2,31 +2,40 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { employeeData } from 'app/dashboard/employee';
 import { Observable } from 'rxjs';
+import { taskData } from 'app/table-list/task';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmpDataService {
 
-  private selectedEmployee: {
-    name: string,
-    task: string
-  };
-
   public url="api/employee.json";
+  public url2="api/task.json"
   constructor(private http:HttpClient) { }
+
   employee():Observable<employeeData[]>{
     return this.http.get<employeeData[]>(this.url);
+  }
+
+  task():Observable<taskData[]>{
+    return this.http.get<taskData[]>(this.url2);
   }
   // saveUsers(data:any){
   //   return this.http.post(this.url, data);
   // }
-
+  private selectedEmployee:any;
   setSelectedEmployee(employee: any) {
     this.selectedEmployee = employee;
   }
-
   getSelectedEmploee() {
     return this.selectedEmployee;
+  }
+
+  private selectedTask:any;
+  setSelectedTask(task:any){
+    this.selectedTask=task;
+  }
+  getSelectedTask(){
+    return this.selectedTask;
   }
 }

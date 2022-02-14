@@ -2,6 +2,7 @@ import { Component, OnInit,VERSION } from '@angular/core';
 import { employeeData } from 'app/dashboard/employee';
 import { EmpDataService } from 'app/service/emp-data.service';
 import { data } from 'jquery';
+import { taskData } from './task';
 
 @Component({
   selector: 'app-table-list',
@@ -9,42 +10,17 @@ import { data } from 'jquery';
   styleUrls: ['./table-list.component.css'],
 })
 export class TableListComponent implements OnInit {
-  constructor() {}
-  taskList:any[]=[
-    {
-      "Task":"API Development",
-      "Assigned_To":"Shubhankit",
-      "Estimated_Date":"10/02/2022",
-      "Current_Status":"In Progress"
-    },
-    {
-      "Task":"Employee Detail",
-      "Assigned_To":"Afzal Husain",
-      "Estimated_Date":"05/02/2022",
-      "Current_Status":"In Progress"
-    },
-    {
-      "Task":"Employee Detail",
-      "Assigned_To":"Riya Mishra",
-      "Estimated_Date":"05/02/2022",
-      "Current_Status":"Completed"
-    },
-    {
-      "Task":"API Development",
-      "Assigned_To":"Pranav AS",
-      "Estimated_Date":"10/02/2022",
-      "Current_Status":"Completed"
-    },
-    {
-      "Task":"API Development",
-      "Assigned_To":"KrupaShankar",
-      "Estimated_Date":"10/02/2022",
-      "Current_Status":"In Progress"
-    },
-  ]
 
-  filterTask:any[]=[];
+  tasks:taskData[]=[];
+  constructor(private empData:EmpDataService) { 
+    // empData.employee().subscribe((data)=>{
+    //   this.employees=data;
+    // })
+    this.tasks = empData.getSelectedTask();
+    console.warn(this.tasks);
+  }
 
+  filterTask:taskData[]=[];
   private _filter:string='';
   get filter():string{
     return this._filter;
@@ -54,21 +30,19 @@ export class TableListComponent implements OnInit {
     console.warn('In setter',value);
     this.filterTask=this.performFilter(value);
   }
-  performFilter(filterBy:string):any[]{
+
+  performFilter(filterBy:string):taskData[]{
     filterBy=filterBy.toLocaleLowerCase();
-    return this.taskList.filter((list:any)=>
+    return this.tasks.filter((list:taskData)=>
       list.Task.toLocaleLowerCase().includes(filterBy));
   }
 
-  ngOnInit(){
-    this.filter=''
-  }
-
+  // Sorting........
   isDisc:boolean=false;
   sortTask(property) {
     this.isDisc=!this.isDisc;
     let direction= this.isDisc?1:-1;
-    this.filterTask.sort(function(a:any,b:any){
+    this.tasks.sort(function(a:any,b:any){
       if(a[property]<b[property]){
         return -1*direction;
       }
@@ -79,5 +53,9 @@ export class TableListComponent implements OnInit {
         return 0;
       }
     });
+  }
+
+  ngOnInit() {
+    this.filter="";
   }
 }

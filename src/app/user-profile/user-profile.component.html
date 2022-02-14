@@ -1,56 +1,69 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-10">
         <div class="card">
           <div class="card-header card-header-success">
-            <h4 class="card-title">Edit Profile</h4>
-            <p class="card-category">Complete your profile</p>
+              <h4 class="card-title ">Task detail</h4>
+              <p class="card-category">Here is all task detail</p>
           </div>
           <div class="card-body">
-            <form #postData="ngForm">
-              <div class="row">
-                <div class="col-md-5">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Company (disabled)" disabled>
-                  </mat-form-field>
+            <div class="row">
+                <div class="col-md-2">Filter:</div>
+                    <div class="col-md-4">
+                        <input type="text" class="input" [(ngModel)]='filter'>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="ID" ngModel name="ID">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-5">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Employee Name" ngModel name="EmployeeName">
-                  </mat-form-field>
-                </div>
+              <div class="table-responsive">
+                  <table class="table table-hover">
+                      <thead class="text-warning">
+                          <th>ID</th>
+                          <th (click)="sortEmployee('Name')">Name&nbsp;
+                            <i class="fa fa-sort"></i>
+                          </th>
+                          <th>Team</th>
+                          <th>Team Members</th>
+                          <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
+                            <i class="fa fa-sort"></i>
+                         </th>
+                          <th>Status</th>
+                      </thead>
+                      <tbody>
+
+                          <tr *ngFor="let employee of filterEmployee">
+                              <td>
+                                  {{employee.ID}}
+                              </td>
+                              <td>
+                                  <a routerLink="">
+                                      {{employee.Name}}
+                                  </a>
+                                  <router-outlet></router-outlet>
+                              </td>
+                              <td>
+                                  {{employee.Team}}
+                              </td>
+                              <td>
+                                  {{employee.Team_Members}}
+                              </td>
+                              <td class="text-primary">
+                                  {{employee.Current_Task}}
+                              </td>
+                              <td>
+                                  {{employee.Status}}
+                              </td>
+                          </tr>
+                      </tbody>
+                  </table>
               </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Country" ngModel type="text" name="country">
-                  </mat-form-field>
-                </div>
-                <div class="col-md-4">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="City" ngModel type="text" name="city">
-                  </mat-form-field>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <mat-form-field class="example-full-width">
-                    <input matInput placeholder="Salary" ngModel type="text" name="salary">
-                  </mat-form-field>
-                </div>
-              </div>
-              <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
-            </form>
           </div>
-        </div>
+          <!-- <div class="card-footer">
+              <button type="button" class="btn btn-outline-primary" style="width: 100px"
+              onclick="onBack()">
+                  Back
+              </button>
+          </div> -->
+      </div>
       </div>
     </div>
   </div>

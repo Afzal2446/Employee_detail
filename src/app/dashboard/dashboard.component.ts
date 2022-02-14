@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { employeeData } from './employee';
 import { EmpDataService } from 'app/service/emp-data.service';
+import { Router } from '@angular/router';
+import { taskData } from 'app/table-list/task';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class DashboardComponent implements OnInit {
   employees:employeeData[]=[];
   filterEmployee:employeeData[]=[];
 
-  constructor(private empData: EmpDataService) {}
+  constructor(private empData: EmpDataService, private router: Router) {}
 
 
   private _filter:string='';
@@ -32,24 +34,84 @@ export class DashboardComponent implements OnInit {
       list.Name.toLocaleLowerCase().includes(filterBy)||
       list.Current_Task.toLocaleLowerCase().includes(filterBy));
   }
+
+  //Task related code......
+  tasks:taskData[]=[];
+  filterTask:taskData[]=[];
+  private _filterTask:string='';
+  get taskFilter():string{
+    return this._filterTask;
+  }
+  set taskFilter(value:string){
+    this._filterTask=value;
+    console.warn('In setter',value);
+    this.filterTask=this.performFilterTask(value);
+  }
+  performFilterTask(filterby:string):taskData[]{
+    filterby=filterby.toLocaleLowerCase();
+    return this.tasks.filter((list:taskData)=>
+      list.Task.toLocaleLowerCase().includes(filterby)||
+      list.Assigned_to.toLocaleLowerCase().includes(filterby));
+  }
+  
+
   ngOnInit():void {
     this.empData.employee().subscribe({
       next:employees=>{
         this.employees=employees;
-        console.warn(this.employees);
+        // console.warn(this.employees);
         this.filterEmployee=[...this.employees];
-        this.filterEmployee = this.filterEmployee.splice(0, 5);
+        this.filterEmployee = this.filterEmployee.splice(0, 3);
+        // console.warn(this.filterEmployee);
       }
     });
+    this.empData.task().subscribe({
+      next:tasks=>{
+        this.tasks=tasks;
+        this.filterTask=[...this.tasks];
+        this.filterTask = this.filterTask.splice(0, 3);
+        console.warn(this.filterTask);
+      }
+    })
   }
-  showList:boolean=false; 
-  buttonToggle(){
-    this.showList= !this.showList;
-    this.showMoreRecords();
+
+  showListEmployee:boolean=false; 
+  toggleEmployee(){
+    this.showListEmployee= !this.showListEmployee;
+    this.router.navigateByUrl('/user-profile');
+    this.showMoreEmployee();
+    this.onEmployeeSelected(this.employees);
   }   
+  onEmployeeSelected(filterEmployee: any) {
+    this.empData.setSelectedEmployee(filterEmployee);
+  }
+  showMoreEmployee():any {
+    if (this.showListEmployee) {
+      // this.filterEmployee = [...this.employees];
+    } else {
+      this.filterEmployee = this.filterEmployee.splice(0, 3);
+    }
+  }
+
+  showListTask:boolean=false;
+  toggleTask(){
+    this.showListTask= !this.showListTask;
+    this.router.navigateByUrl('/table-list');
+    this.showMoreTask();
+    this.onTaskSelected(this.tasks);
+  }   
+  onTaskSelected(filterTask: any) {
+    this.empData.setSelectedTask(filterTask);
+  }
+  showMoreTask():any {
+    if (this.showListTask) {
+      // this.filterTask = [...this.tasks];
+    } else {
+      this.filterTask = this.filterTask.splice(0, 3);
+    }
+  }
   
   // Filtering by name
-
   isDisc:boolean=false;
   sortEmployee(property) {
     this.isDisc=!this.isDisc;
@@ -65,20 +127,5 @@ export class DashboardComponent implements OnInit {
         return 0;
       }
     });
-  }
-
-  showMoreRecords() {
-    if (this.showList) {
-      this.filterEmployee = [...this.employees];
-      let employees = []
-      employees = [1,2,3,4,5]; // 1,5
-      let permanentEmployees = [...employees];
-    } else {
-      this.filterEmployee = this.filterEmployee.splice(0, 5);
-    }
-  }
-
-  onEmployeeSelected(employee: any) {
-    this.empData.setSelectedEmployee(employee);
   }
 }

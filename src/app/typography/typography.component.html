@@ -2,52 +2,11 @@
   <div class="container-fluid">
     <div class="card">
         <div class="card-header card-header-success">
-            <h4 class="card-title">All Environment </h4>
+            <h4 class="card-title">All Environments </h4>
             <p class="card-category">Created for only Ivy Employee</p>
         </div>
-        <div class="card-body">
-            <div class="table-responsive">
-                <div class="row">
-                    <div class="col-md-2">Filter :</div>
-                        <div class="col-md-4">
-                            <input type="text" class="input" [(ngModel)]='filter'>
-                    </div>
-                  </div>
-                <table class="table">
-                    <thead class=" text-primary">
-                        <th (click)="sortEnvironment('Environment')">
-                            Enviroments&nbsp;
-                            <i class="fa fa-sort"></i>
-                        </th>
-                        <th>
-                            build version
-                        </th>
-                        <th>
-                            features
-                        </th>
-                        <th>
-                            QA Status
-                        </th>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let env of filterEnvironments">
-                            <td>
-                              {{env.Environment}}
-                            </td>
-                            <td>
-                               {{env.build_Version}}
-                            </td>
-                            <td>
-                               {{env.Features}}
-                            </td>
-                            <td>
-                                {{env.QA_Status}}
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart>
+        
     </div>
 </div>
 </div>
