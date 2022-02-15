@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpDataService } from 'app/service/emp-data.service';
 import { employeeData } from 'app/dashboard/employee';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
+import { EmployeeDataComponent } from './employee-data/employee-data.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,7 +13,7 @@ export class UserProfileComponent implements OnInit {
 
   employees:employeeData[]=[];
   filterEmployee:employeeData[]=[];
-  constructor(private empData:EmpDataService) { 
+  constructor(private empData:EmpDataService, private matDialog: MatDialog) { 
     // empData.employee().subscribe((data)=>{
     //   this.employees=data;
     // })
@@ -54,5 +56,21 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit():void {
     this.filter='';
+  }
+
+  openDialog(employee) {
+
+    let dialogConfig = new MatDialogConfig();
+    dialogConfig.height = '300px';
+    dialogConfig.width = '300px';
+    dialogConfig.data = {
+      employee:employee
+    };
+
+    let dialog = this.matDialog.open(EmployeeDataComponent, dialogConfig);
+
+    dialog.afterClosed().subscribe((res: any) => {
+      console.log(res);
+    });
   }
 }

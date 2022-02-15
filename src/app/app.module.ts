@@ -13,13 +13,14 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
-import { typographyComponent } from './typography/typography.component';
+import { typographyComponent } from './environment/typography.component';
 import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { employeeData } from './dashboard/employee';
 import { NgxOrgChartModule } from 'ngx-org-chart';
+import { EmployeeDataComponent } from './user-profile/employee-data/employee-data.component';
 
 @NgModule({
   imports: [
@@ -38,6 +39,7 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    EmployeeDataComponent,
     // DashboardComponent
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],
