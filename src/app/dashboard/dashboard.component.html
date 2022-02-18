@@ -98,25 +98,25 @@
 
                                     <tr *ngFor="let employee of filterEmployee">
                                         <td *ngIf="true">
-                                            {{employee.ID}}
+                                            {{employee.empId}}
                                         </td>
                                         <td *ngIf="true">
                                             <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
-                                            {{employee.Name}}
+                                            {{employee.name}}
                                             <!-- </a> -->
                                             <!-- <router-outlet></router-outlet> -->
                                         </td>
                                         <td *ngIf="true">
-                                            {{employee.Team}}
+                                            {{employee.team}}
                                         </td>
                                         <td *ngIf="true">
-                                            {{employee.Team_Members}}
+                                            {{employee.team_Member}}
                                         </td>
                                         <td *ngIf="true" class="text-primary">
-                                            {{employee.Current_Task}}
+                                            {{employee.currentTask}}
                                         </td>
                                         <td *ngIf="true">
-                                            {{employee.Status}}
+                                            {{employee.status}}
                                         </td>
                                     </tr>
                                 </tbody>
@@ -156,16 +156,16 @@
                                     <tbody>
                                         <tr *ngFor="let task of filterTask">
                                             <td>
-                                                {{task.Task}}
+                                                {{task.task}}
                                             </td>
                                             <td>
-                                                {{task.Assigned_To}}
+                                                {{task.assigned_To}}
                                             </td>
                                             <td>
-                                                {{task.required_Day}}
+                                                {{task.estimated_Date}}
                                             </td>
                                             <td>
-                                               {{task.Current_Status}}
+                                               {{task.current_Status}}
                                             </td>
                                         </tr>
                                     </tbody>

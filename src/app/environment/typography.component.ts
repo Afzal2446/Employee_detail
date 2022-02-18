@@ -55,66 +55,133 @@ export class typographyComponent implements OnInit {
   ngOnInit() {
     this.filter='';
   }
+
+  // nodes: any = [
+  //   {
+  //     name: 'Pranav AS',
+  //     cssClass: 'ngx-org-ceo',
+  //     image: '',
+  //     title: 'Chief Executive Officer',
+  //     childs: [
+  //       {
+  //         name: 'Afzal',
+  //         cssClass: 'ngx-org-ceo',
+  //         image: 'assets/node.svg',
+  //         title: 'CEO, Google Cloud',
+  //       },
+  //       {
+  //         name: 'Shubhankit',
+  //         cssClass: 'ngx-org-ceo',
+  //         image: 'assets/node.svg',
+  //         title: 'CEO, YouTube',
+  //         childs: [
+  //           {
+  //             name: 'Krupashankar',
+  //             cssClass: 'ngx-org-head',
+  //             image: 'assets/node.svg',
+  //             title: 'Global Head of Business Operations',
+  //             childs: []
+  //           },
+  //           {
+  //             name: 'Riya Mishra',
+  //             cssClass: 'ngx-org-vp',
+  //             image: 'assets/node.svg',
+  //             title: 'VP, Agency and Brand Solutions',
+  //             childs: []
+  //           },
+  //           {
+  //             name: 'Ariel Bardin',
+  //             cssClass: 'ngx-org-vp',
+  //             image: 'assets/node.svg',
+  //             title: 'VP, Product Management',
+  //             childs: []
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         name: 'Riya mishra',
+  //         cssClass: 'ngx-org-head',
+  //         image: 'assets/node.svg',
+  //         title: 'Head of Artificial Intelligence',
+  //         childs: [
+  //           {
+  //             name: 'David Feinberg',
+  //             cssClass: 'ngx-org-ceo',
+  //             image: 'assets/node.svg',
+  //             title: 'CEO, Google Health',
+  //             childs: []
+  //           }
+  //         ]
+  //       }
+  //     ]
+  //   }
+  // ];
+
   nodes: any = [
     {
-      name: 'Pranav AS',
+      name: 'QaLab1',
       cssClass: 'ngx-org-ceo',
       image: '',
-      title: 'Chief Executive Officer',
+      title: 'IP:123',
+      // DB:'test1, test2, test3',
       childs: [
         {
-          name: 'Afzal',
+          name: 'QaLab3',
           cssClass: 'ngx-org-ceo',
           image: 'assets/node.svg',
-          title: 'CEO, Google Cloud',
+          title: ' 21.5.19'
+
+          // IP:'12',
+          // IP-38213.
         },
         {
-          name: 'Shubhankit',
+          name: 'QaLab4',
           cssClass: 'ngx-org-ceo',
           image: 'assets/node.svg',
-          title: 'CEO, YouTube',
-          childs: [
-            {
-              name: 'Krupashankar',
-              cssClass: 'ngx-org-head',
-              image: 'assets/node.svg',
-              title: 'Global Head of Business Operations',
-              childs: []
-            },
-            {
-              name: 'Riya Mishra',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Agency and Brand Solutions',
-              childs: []
-            },
-            {
-              name: 'Ariel Bardin',
-              cssClass: 'ngx-org-vp',
-              image: 'assets/node.svg',
-              title: 'VP, Product Management',
-              childs: []
-            }
-          ]
+          title: '21.4.12',
         },
         {
-          name: 'Riya mishra',
+          name: 'QaLab5',
+          cssClass: 'ngx-org-ceo',
+          image: 'assets/node.svg',
+          title: '21.4.12',
+        },
+        {
+          name: 'QaLab6',
           cssClass: 'ngx-org-head',
           image: 'assets/node.svg',
-          title: 'Head of Artificial Intelligence',
-          childs: [
+          title: '21.10.12',
+              childs: [
             {
-              name: 'David Feinberg',
-              cssClass: 'ngx-org-ceo',
+              name: 'QaLab7',
+              cssClass: 'ngx-org-vp',
               image: 'assets/node.svg',
-              title: 'CEO, Google Health',
-              childs: []
-            }
+              title: '21.10.12',
+            },
+            {
+              name: 'QaLab8',
+              cssClass: 'ngx-org-vp',
+              image: 'assets/node.svg',
+              title: '21.10.12',
+            },
           ]
+        },
+        {
+          name: 'Lab1',
+          cssClass: 'ngx-org-head',
+          image: 'assets/node.svg',
+          title: '22.02.02',
+        },
+        {
+          name: 'Lab2',
+          cssClass: 'ngx-org-ceo',
+          image: 'assets/node.svg',
+          title: '22.04',
         }
       ]
     }
   ];
+
   isDisc:boolean=false;
   sorttypography(property) {
     this.isDisc=!this.isDisc;

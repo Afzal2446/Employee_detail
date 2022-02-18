@@ -4,8 +4,8 @@
       <div class="col-md-10">
         <div class="card">
           <div class="card-header card-header-success">
-              <h4 class="card-title ">Task detail</h4>
-              <p class="card-category">Here is all task detail</p>
+              <h4 class="card-title ">Team detail</h4>
+              <p class="card-category">Here is all task of team</p>
           </div>
           <div class="card-body">
             <div class="row">
@@ -18,40 +18,39 @@
                   <table class="table table-hover">
                       <thead class="text-warning">
                           <th>ID</th>
-                          <th (click)="sortEmployee('Name')">Name
+                          <th (click)="sortEmployee('name')">Name
                             &nbsp;
                             <i class="fa fa-sort"></i>
                           </th>
                           <th>Team</th>
                           <th>Team Members</th>
-                          <th (click)="sortEmployee('Current_Task')">Current Task&nbsp;
+                          <th (click)="sortEmployee('currentTask')">Current Task&nbsp;
                             <i class="fa fa-sort"></i>
                          </th>
                           <th>Status</th>
                       </thead>
                       <tbody>
-
                           <tr *ngFor="let employee of filterEmployee">
                               <td>
-                                  {{employee.ID}}
+                                  {{employee.empId}}
                               </td>
                               <td>
                                   <a (click)="openDialog(employee)">
-                                      {{employee.Name}}
+                                      {{employee.name}}
                                   </a>
                                   <!-- <router-outlet></router-outlet> -->
                               </td>
                               <td>
-                                  {{employee.Team}}
+                                  {{employee.team}}
                               </td>
                               <td>
-                                  {{employee.Team_Members}}
+                                  {{employee.team_Member}}
                               </td>
                               <td class="text-primary">
-                                  {{employee.Current_Task}}
+                                  {{employee.currentTask}}
                               </td>
                               <td>
-                                  {{employee.Status}}
+                                  {{employee.status}}
                               </td>
                           </tr>
                       </tbody>

@@ -1,8 +1,8 @@
 export class employeeData{
-    ID:number;
-    Name:string;
-    Team:string;
-    Team_Members:string;
-    Current_Task:string;
-    Status:string;
+    empID:number;
+    name:string;
+    team:string;
+    team_Member:string;
+    currentTask:string;
+    status:string;
 }

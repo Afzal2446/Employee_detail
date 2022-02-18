@@ -9,8 +9,9 @@ import { taskData } from 'app/table-list/task';
 })
 export class EmpDataService {
 
-  public url="api/employee.json";
-  public url2="api/task.json"
+  // public url="api/employee.json";
+  public url="http://10.1.113.124:82/api/Employee";
+  public url2="http://10.1.113.124:82/api/Task"
   constructor(private http:HttpClient) { }
 
   employee():Observable<employeeData[]>{

@@ -18,7 +18,7 @@ export class UserProfileComponent implements OnInit {
     //   this.employees=data;
     // })
     this.employees = empData.getSelectedEmploee();
-    // console.warn(this.employees);
+    console.warn(this.employees);
   }
 
   private _filter:string='';
@@ -27,21 +27,21 @@ export class UserProfileComponent implements OnInit {
   }
   set filter(value:string){
     this._filter=value;
-    console.warn('In setter',value);
+    // console.warn('In setter',value);
     this.filterEmployee=this.performFilter(value);
   }
 
   performFilter(filterBy:string):employeeData[]{
     filterBy=filterBy.toLocaleLowerCase();
     return this.employees.filter((list:employeeData)=>
-      list.Name.toLocaleLowerCase().includes(filterBy));
+      list.name.toLocaleLowerCase().includes(filterBy));
   }
   //sorting.........
   isDisc:boolean=false;
   sortEmployee(property) {
     this.isDisc=!this.isDisc;
     let direction= this.isDisc?1:-1;
-    this.employees.sort(function(a:any,b:any){
+    this.filterEmployee.sort(function(a:any,b:any){
       if(a[property]<b[property]){
         return -1*direction;
       }
@@ -55,7 +55,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit():void {
-    this.filter='';
+    this._filter='';
+    this.filterEmployee=[...this.employees];
   }
 
   openDialog(employee) {
@@ -70,7 +71,7 @@ export class UserProfileComponent implements OnInit {
     let dialog = this.matDialog.open(EmployeeDataComponent, dialogConfig);
 
     dialog.afterClosed().subscribe((res: any) => {
-      console.log(res);
+      // console.log(res);
     });
   }
 }

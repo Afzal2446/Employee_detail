@@ -24,15 +24,15 @@ export class DashboardComponent implements OnInit {
   }
   set filter(value:string){
     this._filter=value;
-    console.warn('In setter',value);
+    // console.warn('In setter',value);
     this.filterEmployee=this.performFilter(value);
   }
 
   performFilter(filterBy:string):employeeData[]{
     filterBy=filterBy.toLocaleLowerCase();
     return this.employees.filter((list:employeeData)=>
-      list.Name.toLocaleLowerCase().includes(filterBy)||
-      list.Current_Task.toLocaleLowerCase().includes(filterBy));
+      list.name.toLocaleLowerCase().includes(filterBy)||
+      list.currentTask.toLocaleLowerCase().includes(filterBy));
   }
 
   //Task related code......
@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   }
   set taskFilter(value:string){
     this._filterTask=value;
-    console.warn('In setter',value);
+    // console.warn('In setter',value);
     this.filterTask=this.performFilterTask(value);
   }
   performFilterTask(filterby:string):taskData[]{
@@ -56,6 +56,7 @@ export class DashboardComponent implements OnInit {
   
 
   ngOnInit():void {
+    this.filter='';
     this.empData.employee().subscribe({
       next:employees=>{
         this.employees=employees;
@@ -68,9 +69,10 @@ export class DashboardComponent implements OnInit {
     this.empData.task().subscribe({
       next:tasks=>{
         this.tasks=tasks;
+        // console.log(tasks);
         this.filterTask=[...this.tasks];
         this.filterTask = this.filterTask.splice(0, 3);
-        console.warn(this.filterTask);
+        // console.warn(this.filterTask);
       }
     })
   }
