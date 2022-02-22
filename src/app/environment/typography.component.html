@@ -5,7 +5,7 @@
             <h4 class="card-title">All Environments </h4>
             <p class="card-category">Created for only Ivy Employee</p>
         </div>
-        <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart>
+        <ngx-org-chart [nodes]="nodes" direction="vertical" (itemClick)="onEnvClick($event)"></ngx-org-chart>
     </div>
 </div>
 </div>

@@ -7,6 +7,7 @@ import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
 import { typographyComponent } from '../../environment/typography.component';
+import { ListEnvironmentComponent } from 'app/list-environment/list-environment.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -35,7 +36,8 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
     DashboardComponent,
     UserProfileComponent,
     TableListComponent,
-    typographyComponent
+    typographyComponent,
+    ListEnvironmentComponent
   ]
 })
 

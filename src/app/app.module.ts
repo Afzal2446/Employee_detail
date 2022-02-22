@@ -14,6 +14,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { TableListComponent } from './table-list/table-list.component';
 import { typographyComponent } from './environment/typography.component';
+import { ListEnvironmentComponent } from './list-environment/list-environment.component';
 import {
   AgmCoreModule
 } from '@agm/core';

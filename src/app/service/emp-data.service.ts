@@ -35,8 +35,18 @@ export class EmpDataService {
   private selectedTask:any;
   setSelectedTask(task:any){
     this.selectedTask=task;
+    // console.warn(this.selectedTask);
   }
   getSelectedTask(){
     return this.selectedTask;
+  }
+
+  private selectedEnvironment:any;
+  setSelectedEnvironment(insertEnv:any){
+    this.selectedEnvironment=insertEnv;
+    // console.log(insertEnv);
+  }
+  getSelectedEnvironment(){
+    return this.selectedEnvironment;
   }
 }

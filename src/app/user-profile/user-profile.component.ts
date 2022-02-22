@@ -18,7 +18,6 @@ export class UserProfileComponent implements OnInit {
     //   this.employees=data;
     // })
     this.employees = empData.getSelectedEmploee();
-    console.warn(this.employees);
   }
 
   private _filter:string='';

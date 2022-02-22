@@ -50,7 +50,7 @@ export class DashboardComponent implements OnInit {
   performFilterTask(filterby:string):taskData[]{
     filterby=filterby.toLocaleLowerCase();
     return this.tasks.filter((list:taskData)=>
-      list.Task.toLocaleLowerCase().includes(filterby)||
+      list.task.toLocaleLowerCase().includes(filterby)||
       list.Assigned_to.toLocaleLowerCase().includes(filterby));
   }
   

@@ -16,8 +16,7 @@ export class TableListComponent implements OnInit {
     // empData.employee().subscribe((data)=>{
     //   this.employees=data;
     // })
-    this.tasks = empData.getSelectedTask();
-    console.warn(this.tasks);
+    this.tasks = empData.getSelectedTask(); 
   }
 
   filterTask:taskData[]=[];
@@ -27,14 +26,14 @@ export class TableListComponent implements OnInit {
   }
   set filter(value:string){
     this._filter=value;
-    console.warn('In setter',value);
+    // console.warn('In setter',value);
     this.filterTask=this.performFilter(value);
   }
 
   performFilter(filterBy:string):taskData[]{
     filterBy=filterBy.toLocaleLowerCase();
     return this.tasks.filter((list:taskData)=>
-      list.Task.toLocaleLowerCase().includes(filterBy));
+      list.task.toLocaleLowerCase().includes(filterBy));
   }
 
   // Sorting........
@@ -42,7 +41,7 @@ export class TableListComponent implements OnInit {
   sortTask(property) {
     this.isDisc=!this.isDisc;
     let direction= this.isDisc?1:-1;
-    this.tasks.sort(function(a:any,b:any){
+    this.filterTask.sort(function(a:any,b:any){
       if(a[property]<b[property]){
         return -1*direction;
       }
@@ -57,5 +56,6 @@ export class TableListComponent implements OnInit {
 
   ngOnInit() {
     this.filter="";
+    this.filterTask=[...this.tasks];
   }
 }

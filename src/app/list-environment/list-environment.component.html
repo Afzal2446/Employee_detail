@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="row">
+        <!-- Team list........ -->
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title">Headed</h4>
+                </div>
+                <div class="card-body table-responsive">
+                    <div class="row">
+                        <!-- <div class="col-md-2">Filter:</div>
+                        <div class="col-md-4">
+                            <input type="text" class="input" [(ngModel)]='filter'>
+                        </div> -->
+                    </div>
+                    <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <th>Env Name</th>
+                            <th>IP</th>
+                            <th>Version</th>
+                            <th>DB</th>
+                            <!-- <th>Current Task</th>
+                            <th>Status</th> --> 
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
+                                    {{resultArray.name}}
+                                    <!-- </a> -->
+                                    <!-- <router-outlet></router-outlet> -->
+                                </td>
+                                <td>
+                                    {{resultArray.title}}
+                                </td>
+                                <td>
+                                    {{resultArray.version}}
+                                </td>
+                                <td>
+                                    {{resultArray.db}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <!-- <button type="button" id="button" class="btn btn-primary btn-sm"
+                            (click)="toggleEmployee()">{{showListEmployee ? 'Hide ': 'See '}}
+                                More
+                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task list -->
+        <div class="col-lg-6 col-md-6">
+            <div class="card">
+                <div class="card-header card-header-success">
+                    <h4 class="card-title ">Body</h4>
+                    <!-- <p class="card-category">Here is all task detail</p> -->
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <div class="row">
+                            <!-- <div class="col-md-2">Filter:</div>
+                                <div class="col-md-4">
+                                    <input type="text" class="input" [(ngModel)]='taskFilter'>
+                            </div> -->
+                          </div>
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th>Config Store</th>
+                                <th>String Store</th>
+                                <!-- <th>Estimated date</th>
+                                <th>Current Status</th> -->
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <!-- {{task.task}} -->
+                                    </td>
+                                    <td>
+                                        <!-- {{task.assigned_To}} -->
+                                    </td>
+                            </tbody>
+                        </table>
+                        <div class="row">
+                            <!-- <button type="button" id="button" class="btn btn-primary btn-sm"
+                                (click)="toggleTask()">{{showListTask ? 'Hide ': 'See '}}
+                                    More
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
