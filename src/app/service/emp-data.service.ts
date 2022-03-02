@@ -11,7 +11,9 @@ export class EmpDataService {
 
   // public url="api/employee.json";
   public url="http://10.1.113.124:82/api/Employee";
-  public url2="http://10.1.113.124:82/api/Task"
+  public url2="http://10.1.113.124:82/api/Task";
+  public url3="api/environment.json";
+
   constructor(private http:HttpClient) { }
 
   employee():Observable<employeeData[]>{
@@ -20,6 +22,10 @@ export class EmpDataService {
 
   task():Observable<taskData[]>{
     return this.http.get<taskData[]>(this.url2);
+  }
+
+  environment():Observable<any[]>{
+    return this.http.get<any[]>(this.url3);
   }
   // saveUsers(data:any){
   //   return this.http.post(this.url, data);
