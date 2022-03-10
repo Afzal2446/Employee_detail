@@ -31,8 +31,7 @@ export class DashboardComponent implements OnInit {
   performFilter(filterBy:string):employeeData[]{
     filterBy=filterBy.toLocaleLowerCase();
     return this.employees.filter((list:employeeData)=>
-      list.name.toLocaleLowerCase().includes(filterBy)||
-      list.currentTask.toLocaleLowerCase().includes(filterBy));
+      list.name.toLocaleLowerCase().includes(filterBy));
   }
 
   //Task related code......
@@ -57,15 +56,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit():void {
     this.filter='';
-    this.empData.employee().subscribe({
-      next:employees=>{
-        this.employees=employees;
-        // console.warn(this.employees);
-        this.filterEmployee=[...this.employees];
-        this.filterEmployee = this.filterEmployee.splice(0, 3);
-        // console.warn(this.filterEmployee);
-      }
-    });
+    
     this.empData.task().subscribe({
       next:tasks=>{
         this.tasks=tasks;

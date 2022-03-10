@@ -11,60 +11,11 @@ export class typographyComponent implements OnInit {
 
   constructor(private empData: EmpDataService, private router: Router) { }
 
-  // typographyList=[
-  //   {
-  //     "typography":"BetMgm",
-  //     "build_Version":"2.6.2",
-  //     "Features":"Banking realted",
-  //     "QA_Status":"In Progress"
-  //   },{
-  //     "typography":"Nevada",
-  //     "build_Version":"3.8.1",
-  //     "Features":"Betting realted",
-  //     "QA_Status":"Completed"
-  //   },{
-  //     "typography":"Enatain",
-  //     "build_Version":"4.7.9",
-  //     "Features":"Gaming based",
-  //     "QA_Status":"On Hold"
-  //   },{
-  //     "typography":"Ivy",
-  //     "build_Version":"9.6.7",
-  //     "Features":"Indian betting plateform",
-  //     "QA_Status":"In Progress"
-  //   }
-  // ];
 
-  // filtertypographys:any[]=[];
-
-  // private _filter:string='';
-  // get filter():string{
-  //   return this._filter;
-  // }
-  // set filter(value:string){
-  //   this._filter=value;
-  //   console.warn('In setter',value);
-  //   this.filtertypographys=this.performFilter(value);
-  // }
-  // performFilter(filterBy:string):any[]{
-  //   filterBy=filterBy.toLocaleLowerCase();
-  //   return this.typographyList.filter((list:any)=>
-  //     list.typography.toLocaleLowerCase().includes(filterBy) || 
-  //     list.Features.toLocaleLowerCase().includes(filterBy) || 
-  //     list.QA_Status.toLocaleLowerCase().includes(filterBy));
-  // }
-
-  environmentData:any[];
   ngOnInit():void {
     // this.filter='';
-    this.empData.environment().subscribe({
-      next:environmentData=>{
-        this.environmentData=environmentData;
-        console.warn(this.environmentData);
-      }
-    })
+   
   }
-
   
   // isDisc:boolean=false;
   // sorttypography(property) {
@@ -82,62 +33,56 @@ export class typographyComponent implements OnInit {
   //     }
   //   });
   // }
-  
-  nodes: any = [
-    {
-      name: 'QaLab1',
-      cssClass: 'ngx-org-ceo',
-      title: '21.04.12',
-      childs: [
-        {
-          name: 'QaLab3',
-          cssClass: 'ngx-org-ceo',
-          title: '21.5.19',
-          version: '12',
-          db:'sql',
-          configStore:'Config Something',
-          stringStore:'String Something'
-        },
-        {
-          name: 'QaLab4',
-          cssClass: 'ngx-org-ceo',
-          title: '21.4.12',
-        },
-        {
-          name: 'QaLab5',
-          cssClass: 'ngx-org-ceo',
-          title: '21.4.12',
-        },
-        {
-          name: 'QaLab6',
-          cssClass: 'ngx-org-head',
-          title: '21.10.12',
-              childs: [
-            {
-              name: 'QaLab7',
-              cssClass: 'ngx-org-vp',
-              title: '21.10.12',
-            },
-            {
-              name: 'QaLab8',
-              cssClass: 'ngx-org-vp',
-              title: '21.10.12',
-            },
-          ]
-        },
-        {
-          name: 'Lab1',
-          cssClass: 'ngx-org-head',
-          title: '22.02.02',
-        },
-        {
-          name: 'Lab2',
-          cssClass: 'ngx-org-ceo',
-          title: '22.04',
-        }
-      ]
-    }
-  ];
+
+  // nodes:any=[
+  //   {
+  //     "ID": 1,
+  //     "p_ID": 0,
+  //     "name": "Qalab1(10.12.13.14)",
+  //     "Version": "12.4.10",
+  //     "Database": "Primeline1",
+  //     "cssClass": "ngx-org-ceo",
+  //     "childs": [
+  //       {
+  //         "ID": 2,
+  //         "p_ID": 1,
+  //         "name": "Qalab2(10.12.13.14)",
+  //         "Version": "12.4.10",
+  //         "Database": "Primeline1",
+  //         "cssClass": "ngx-org-head",
+  //         "childs": [
+  //           {
+  //             "ID": 3,
+  //             "p_ID": 2,
+  //             "name": "Qalab3(10.12.13.14)",
+  //             "Version": "12.4.10",
+  //             "Database": "Primeline1",
+  //             "cssClass": "ngx-org-vp",
+  //             "childs": []
+  //           },
+  //           {
+  //             "ID": 4,
+  //             "p_ID": 2,
+  //             "name": "Qalab4(10.12.13.14)",
+  //             "Version": "12.4.10",
+  //             "Database": "Primeline1",
+  //             "cssClass": "ngx-org-vp",
+  //             "childs": []
+  //           }
+  //         ]
+  //       },
+  //       {
+  //         "ID": 5,
+  //         "p_ID": 1,
+  //         "name": "Qalab5(10.12.13.14)",
+  //         "Version": "12.4.10",
+  //         "Database": "Primeline1",
+  //         "cssClass": "ngx-org-ceo",
+  //         "childs": []
+  //       }
+  //     ]
+  //   }
+  // ];
   
   onEnvClick($event: any) {
     this.router.navigateByUrl('/listEnvironment');

@@ -9,10 +9,18 @@
                     </div>
                     <div class="card-body table-responsive">
                         <div class="row">
+                            <input type="text" class="inputFilter" placeholder="select one" [(ngModel)]="searchText"
+                                [matAutocomplete]="auto" (keyup)="filter()">
+
+                            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onMenuSelected($event.option)">
+                                <mat-option *ngFor="let environment of environments" [value]="environment.Name">
+                                    {{environment.Name}}
+                                </mat-option>
+                            </mat-autocomplete>
                         </div>
                         <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
                         <table class="table table-hover">
-                            <thead class="text-warning">
+                            <thead class="text-warning"> 
                                 <th>Env Name</th>
                                 <th>IP</th>
                                 <th>Version</th>

@@ -10,9 +10,9 @@ import { taskData } from 'app/table-list/task';
 export class EmpDataService {
 
   // public url="api/employee.json";
-  public url="http://10.1.113.124:82/api/Employee";
+  public url="http://10.1.113.124:82/api/Team";
   public url2="http://10.1.113.124:82/api/Task";
-  public url3="api/environment.json";
+  public url3="http://10.1.113.124:82/api/Environment";
 
   constructor(private http:HttpClient) { }
 

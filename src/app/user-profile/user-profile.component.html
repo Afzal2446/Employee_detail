@@ -17,41 +17,33 @@
               <div class="table-responsive">
                   <table class="table table-hover">
                       <thead class="text-warning">
-                          <th>ID</th>
                           <th (click)="sortEmployee('name')">Name
                             &nbsp;
                             <i class="fa fa-sort"></i>
                           </th>
-                          <th>Team</th>
-                          <th>Team Members</th>
-                          <th (click)="sortEmployee('currentTask')">Current Task&nbsp;
+                          <th>Skill</th>
+                          <th (click)="sortEmployee('designation')">Designation&nbsp;
                             <i class="fa fa-sort"></i>
                          </th>
-                          <th>Status</th>
+                          <th>Contact Number</th>
                       </thead>
                       <tbody>
                           <tr *ngFor="let employee of filterEmployee">
-                              <td>
-                                  {{employee.empId}}
-                              </td>
-                              <td>
-                                  <a (click)="openDialog(employee)">
-                                      {{employee.name}}
-                                  </a>
-                                  <!-- <router-outlet></router-outlet> -->
-                              </td>
-                              <td>
-                                  {{employee.team}}
-                              </td>
-                              <td>
-                                  {{employee.team_Member}}
-                              </td>
-                              <td class="text-primary">
-                                  {{employee.currentTask}}
-                              </td>
-                              <td>
-                                  {{employee.status}}
-                              </td>
+                                <td *ngIf="true">
+                                    {{employee.name}}
+                                </td>
+                                <td *ngIf="true">
+                                    <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
+                                    {{employee.skill}}
+                                    <!-- </a> -->
+                                    <!-- <router-outlet></router-outlet> -->
+                                </td>
+                                <td *ngIf="true">
+                                    {{employee.designation}}
+                                </td>
+                                <td *ngIf="true">
+                                    {{employee.contact_number}}
+                                </td>
                           </tr>
                       </tbody>
                   </table>

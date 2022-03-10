@@ -16,6 +16,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgxOrgChartModule } from 'ngx-org-chart';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+
 // import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
 @NgModule({
@@ -31,7 +33,8 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
     MatSelectModule,
     MatTooltipModule,
     NgxOrgChartModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule
     // DropDownListModule
   ],
   declarations: [

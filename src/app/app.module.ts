@@ -22,7 +22,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { employeeData } from './dashboard/employee';
 import { NgxOrgChartModule } from 'ngx-org-chart';
 import { EmployeeDataComponent } from './user-profile/employee-data/employee-data.component';
-// import {DropdownModule} from 'primeng/dropdown';
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -33,7 +33,7 @@ import { EmployeeDataComponent } from './user-profile/employee-data/employee-dat
     RouterModule,
     AppRoutingModule,
     NgxOrgChartModule,
-    // DropdownModule,
+    // MatAutocompleteModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
