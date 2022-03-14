@@ -56,7 +56,17 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit():void {
     this.filter='';
-    
+    this.empData.employee().subscribe({
+      next:employees=>{
+        this.employees=employees;
+        // console.log("API is working fine");
+        // console.warn(this.employees);
+        this.filterEmployee=[...this.employees];
+        this.filterEmployee = this.filterEmployee.splice(0, 3);
+        // console.log("API is working fine");
+        // console.warn(this.filterEmployee);
+      }
+    });
     this.empData.task().subscribe({
       next:tasks=>{
         this.tasks=tasks;

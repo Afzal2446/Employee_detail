@@ -20,6 +20,8 @@ export class ListEnvironmentComponent implements OnInit {
     //     };
     // });
     console.warn(this.resultArray);
+    console.warn(typeof this.resultArray);
+    console.warn((this.resultArray).childs);
   }
   environments = [
     {

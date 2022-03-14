@@ -11,10 +11,15 @@ export class typographyComponent implements OnInit {
 
   constructor(private empData: EmpDataService, private router: Router) { }
 
-
+  nodes:any[];
   ngOnInit():void {
     // this.filter='';
-   
+    this.empData.environment().subscribe({
+      next:nodes=>{
+        this.nodes=nodes;
+        console.warn(this.nodes);
+      }
+    })
   }
   
   // isDisc:boolean=false;
