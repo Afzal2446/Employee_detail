@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="inputs">
+      <form #userForm="ngForm" (ngSubmit)="postData(userForm.value)">
+        <label>Task</label>
+        <input type="text" ngModel name="task" placeholder="Enter Employee Task" />
+        <label>Description</label>
+        <input type="text" name="des" placeholder="Enter Description" />
+        <label>Assigned</label>
+        <input type="text" ngModel name="assigned" placeholder="Enter Assigned Employee" />
+        <label>Status</label>
+        <input type="text" ngModel name="status" placeholder="Enter Task Status" />
+        <label>Environment</label>
+        <input type="text" name="env" placeholder="Enter Environment" />
+        <label>End Date</label>
+        <input type="date" ngModel name="end date" placeholder="Enter End Date" />
+  
+        <button type="submit" class="submitButton">Update</button>
+        <button type="reset" class="cancelButton">Cancel</button>
+      </form>
+    </div>
+  </div>

@@ -8,6 +8,9 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { TableListComponent } from '../../table-list/table-list.component';
 import { typographyComponent } from '../../environment/typography.component';
 import { ListEnvironmentComponent } from 'app/list-environment/list-environment.component';
+import { EmployeeDataComponent } from 'app/user-profile/employee-data/employee-data.component';
+import { AddTaskComponent } from 'app/table-list/add-task/add-task.component';
+import { UpdateTaskComponent } from 'app/table-list/update-task/update-task.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -17,6 +20,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDialogModule} from '@angular/material/dialog';
 import { NgxOrgChartModule } from 'ngx-org-chart';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import {MatIconModule} from '@angular/material/icon';
+
 
 // import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
 
@@ -34,7 +39,8 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
     MatTooltipModule,
     NgxOrgChartModule,
     MatDialogModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatIconModule
     // DropDownListModule
   ],
   declarations: [
@@ -42,7 +48,10 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
     UserProfileComponent,
     TableListComponent,
     typographyComponent,
-    ListEnvironmentComponent
+    ListEnvironmentComponent,
+    EmployeeDataComponent,
+    AddTaskComponent,
+    UpdateTaskComponent
   ]
 })
 

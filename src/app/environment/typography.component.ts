@@ -17,7 +17,7 @@ export class typographyComponent implements OnInit {
     this.empData.environment().subscribe({
       next:nodes=>{
         this.nodes=nodes;
-        console.warn(this.nodes);
+      //   console.warn(this.nodes);
       }
     })
   }

@@ -23,6 +23,9 @@ import { employeeData } from './dashboard/employee';
 import { NgxOrgChartModule } from 'ngx-org-chart';
 import { EmployeeDataComponent } from './user-profile/employee-data/employee-data.component';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import {MatButtonModule} from '@angular/material/button';
+// import { UpdateTaskComponent } from './table-list/update-task/update-task.component';
+// import { AddTaskComponent } from './table-list/add-task/add-task.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -33,6 +36,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
     RouterModule,
     AppRoutingModule,
     NgxOrgChartModule,
+    MatButtonModule,
     // MatAutocompleteModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
@@ -41,7 +45,9 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    EmployeeDataComponent,
+    // UpdateTaskComponent,
+    // AddTaskComponent,
+    // EmployeeDataComponent,
     // DashboardComponent
   ],
   // schemas: [CUSTOM_ELEMENTS_SCHEMA],

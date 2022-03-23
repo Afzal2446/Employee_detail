@@ -5,6 +5,7 @@ import { UserProfileComponent } from '../../user-profile/user-profile.component'
 import { TableListComponent } from '../../table-list/table-list.component';
 import { typographyComponent } from '../../environment/typography.component';
 import { ListEnvironmentComponent } from 'app/list-environment/list-environment.component';
+import { EmployeeDataComponent } from 'app/user-profile/employee-data/employee-data.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -53,5 +54,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'user-profile', component: UserProfileComponent },
     { path: 'table-list', component: TableListComponent },
     { path: 'typography', component: typographyComponent },
-    {path: 'listEnvironment', component:ListEnvironmentComponent}
+    {path: 'listEnvironment', component:ListEnvironmentComponent},
+    // {path: 'EmployeeSignup', component:EmployeeDataComponent}
 ];

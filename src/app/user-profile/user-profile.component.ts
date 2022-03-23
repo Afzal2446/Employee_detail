@@ -3,6 +3,7 @@ import { EmpDataService } from 'app/service/emp-data.service';
 import { employeeData } from 'app/dashboard/employee';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
 import { EmployeeDataComponent } from './employee-data/employee-data.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,7 +14,7 @@ export class UserProfileComponent implements OnInit {
 
   employees:employeeData[]=[];
   filterEmployee:employeeData[]=[];
-  constructor(private empData:EmpDataService, private matDialog: MatDialog) { 
+  constructor(private empData:EmpDataService, private matDialog: MatDialog,private router: Router) { 
     // empData.employee().subscribe((data)=>{
     //   this.employees=data;
     // })
@@ -55,17 +56,28 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit():void {
     this._filter='';
-    this.filterEmployee=[...this.employees];
+    // this.filterEmployee=[...this.employees];
+    this.empData.employee().subscribe({
+      next:employees=>{
+        this.employees=employees;
+        // console.log("API is working fine");
+        // console.warn(this.employees);
+        this.filterEmployee=[...this.employees];
+        // this.filterEmployee = this.filterEmployee.splice(0, 3);
+        // console.log("API is working fine");
+        // console.warn(this.filterEmployee);
+      }
+    });
   }
 
-  openDialog(employee) {
-
+  openDialog() {
+    console.log("dilog works");
     let dialogConfig = new MatDialogConfig();
-    dialogConfig.height = '300px';
-    dialogConfig.width = '300px';
-    dialogConfig.data = {
-      employee:employee
-    };
+    dialogConfig.height = '500px';
+    dialogConfig.width = '500px';
+    // dialogConfig.data = {
+    //   employee:employee
+    // };
 
     let dialog = this.matDialog.open(EmployeeDataComponent, dialogConfig);
 
@@ -73,4 +85,16 @@ export class UserProfileComponent implements OnInit {
       // console.log(res);
     });
   }
+  deleteEmployee(name:string){
+    this.empData.employeeDelete(name).subscribe((res:any)=>{
+      // console.warn(res);
+    })
+  }
+  // addMember(){
+  //   console.warn("Add member click");
+  //   this.matDialog.open(EmployeeDataComponent);
+  //   let dialogConfig = new MatDialogConfig();
+  //   dialogConfig.height = '300px';
+  //   dialogConfig.width = '300px';
+  // }
 }

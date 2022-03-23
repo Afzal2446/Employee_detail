@@ -10,27 +10,49 @@ import { taskData } from 'app/table-list/task';
 export class EmpDataService {
 
   // public url="api/employee.json";
-  public url="http://10.1.113.124:82/api/Team";
-  public url2="http://10.1.113.124:82/api/Task";
-  public url3="http://10.1.113.124:82/api/Environment";
+  public teamUrl = "http://10.1.113.124:82/api/Team";
+  public taskUrl = "http://10.1.113.124:82/api/Task";
+  public environmentUrl = "http://10.1.113.124:82/api/Environment";
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  employee():Observable<employeeData[]>{
-    return this.http.get<employeeData[]>(this.url);
+  //Employee Services.........
+  employee(): Observable<employeeData[]> {
+    return this.http.get<employeeData[]>(this.teamUrl);
+  }
+  employeePost(data: any) {
+    return this.http.post(this.teamUrl, JSON.stringify(data));
+  }
+  employeeDelete(name: string) {
+    return this.http.delete(this.teamUrl);
   }
 
-  task():Observable<taskData[]>{
-    return this.http.get<taskData[]>(this.url2);
+  //Task Services............
+  task(): Observable<taskData[]> {
+    return this.http.get<taskData[]>(this.taskUrl);
+  }
+  taskPost(data: any) {
+    console.log(data);
+    return this.http.post(this.taskUrl, data);
+  }
+  taskUpdate(data: any) {
+    return this.http.put(this.taskUrl, data);
+  }
+  taskDelete(id: number) {
+    console.warn("taskDelete functiuon called");
+    console.warn(id);
+    let data = { body: { "eid": id } };
+    return this.http.delete(this.taskUrl, data);
   }
 
-  environment():Observable<any[]>{
-    return this.http.get<any[]>(this.url3);
+  //Environment Services..........
+  environment(): Observable<any[]> {
+    return this.http.get<any[]>(this.environmentUrl);
   }
   // saveUsers(data:any){
   //   return this.http.post(this.url, data);
   // }
-  private selectedEmployee:any;
+  private selectedEmployee: any;
   setSelectedEmployee(employee: any) {
     this.selectedEmployee = employee;
   }
@@ -38,21 +60,21 @@ export class EmpDataService {
     return this.selectedEmployee;
   }
 
-  private selectedTask:any;
-  setSelectedTask(task:any){
-    this.selectedTask=task;
+  private selectedTask: any;
+  setSelectedTask(task: any) {
+    this.selectedTask = task;
     // console.warn(this.selectedTask);
   }
-  getSelectedTask(){
+  getSelectedTask() {
     return this.selectedTask;
   }
 
-  private selectedEnvironment:any;
-  setSelectedEnvironment(insertEnv:any){
-    this.selectedEnvironment=insertEnv;
+  private selectedEnvironment: any;
+  setSelectedEnvironment(insertEnv: any) {
+    this.selectedEnvironment = insertEnv;
     // console.log(insertEnv);
   }
-  getSelectedEnvironment(){
+  getSelectedEnvironment() {
     return this.selectedEnvironment;
   }
 }

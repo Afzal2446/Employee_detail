@@ -1,5 +1,17 @@
-<label>{{employee.Name}}</label>
-<br>
-<label>Task: {{employee.Current_Task}}</label>
-<br><br>
-<button type="button" class="btn btn-outline-danger btn-sm" (click)="onClose()">close</button>
+<div class="container">
+  <div class="inputs">
+    <form #userForm="ngForm" (ngSubmit)="postData(userForm.value)">
+      <label>Name</label>
+      <input type="text" ngModel name="name" placeholder="Enter Employee Name" />
+      <label>Skill</label>
+      <input type="text" ngModel name="skill" placeholder="Enter Employee Skill" />
+      <label>Designation</label>
+      <input type="text" ngModel name="desgination" placeholder="Enter Employee Designation" />
+      <label>Contact</label>
+      <input type="text" ngModel name="contact" placeholder="Enter Employee Contact Number" />
+
+      <button type="submit" class="submitButton">Submit</button>
+    </form>
+    <button type="reset" class="cancelButton">Cancel</button>
+  </div>
+</div>

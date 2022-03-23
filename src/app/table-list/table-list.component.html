@@ -5,49 +5,74 @@
                 <div class="card">
                     <div class="card-header card-header-success">
                         <h4 class="card-title ">Team Task</h4>
-                        <p class="card-category">Here is all task detail</p>
+                        <!-- <p class="card-category">Here is all task detail</p> -->
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <div class="row">
-                                <div class="col-md-2">Filter By Task:</div>
-                                    <div class="col-md-4">
-                                        <input type="text" class="input" [(ngModel)]='filter'>
-                                </div>
-                              </div>
-                            <table class="table">
-                                <thead class=" text-primary">
-                                    <th (click)="sortTask('task')">Task&nbsp;
-                                        <i class="fa fa-sort"></i>
-                                      </th>
-                                    <th (click)="sortTask('assigned_To')">Assigned To&nbsp;
-                                        <i class="fa fa-sort"></i>
-                                      </th>
-                                    <th>
-                                        Required Day
-                                    </th>
-                                    <th>
-                                        Current Status
-                                    </th>
-                                </thead>
-                                <tbody>
-                                    <tr *ngFor="let task of filterTask">
-                                        <td>
-                                            {{task.task}}
-                                        </td>
-                                        <td>
-                                            {{task.assigned_To}}
-                                        </td>
-                                        <td>
-                                            {{task.estimated_Date}}
-                                        </td>
-                                        <td>
-                                           {{task.current_Status}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <div class="card-body table-responsive">
+                        <div class="row">
+                            <div class="col-md-2">Filter By Task:</div>
+                            <div class="col-md-4">
+                                <input type="text" class="input" [(ngModel)]='filter'>
+                            </div>
+                            <button type="button" id="Add" class="btn btn-outline-success btn-sm"
+                                (click)="openDialog()">Add Task
+                            </button>
                         </div>
+                        <table class="table">
+                            <thead class=" text-primary">
+                                <th (click)="sortTask('task')">Task&nbsp;
+                                    <i class="fa fa-sort"></i>
+                                </th>
+                                <th>Description
+
+                                </th>
+                                <th (click)="sortTask('assigned_To')">&nbsp;
+                                    Assigned
+                                    <i class="fa fa-sort"></i>
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                                <th>
+                                    Environment
+                                </th>
+                                <th>
+                                    End Date
+                                </th>
+                                <th>
+                                    Edit/Delete
+                                </th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let task of filterTask">
+                                    <td>
+                                        {{task.task}}
+                                    </td>
+                                    <td>
+                                        Description
+                                    </td>
+                                    <td>
+                                        {{task.assigned_To}}
+                                    </td>
+                                    <td>
+                                        {{task.current_Status}}
+                                    </td>
+                                    <td>
+                                        Environment
+                                    </td>
+                                    <td>
+                                        {{task.estimated_Date}}
+                                    </td>
+                                    <td>
+                                        <button mat-icon-button (click)="updateTask(task.eid)">
+                                            <mat-icon>launch</mat-icon>
+                                        </button>
+                                        <button mat-icon-button color="warn" (click)="deleteTask(task.eid)">
+                                            <mat-icon>delete</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

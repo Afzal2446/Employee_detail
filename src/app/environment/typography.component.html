@@ -1,11 +1,11 @@
 <div class="main-content">
-  <div class="container-fluid">
-    <div class="card">
-        <div class="card-header card-header-success">
-            <h4 class="card-title">All Environments </h4>
-            <p class="card-category">Created for only Ivy Employee</p>
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-success">
+                <h4 class="card-title">All Environments </h4>
+                <p class="card-category">Created for only Ivy Employee</p>
+            </div>
+            <ngx-org-chart [nodes]="nodes" direction="vertical" (itemClick)="onEnvClick($event)"></ngx-org-chart>
         </div>
-        <ngx-org-chart [nodes]="nodes" direction="vertical" (itemClick)="onEnvClick($event)"></ngx-org-chart>
     </div>
-</div>
 </div>

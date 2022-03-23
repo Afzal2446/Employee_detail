@@ -5,17 +5,17 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">content_copy</i>
+                            <i class="material-icons">person</i>
                         </div>
                         <p class="card-category">Employee</p>
                         <h3 class="card-title">29
-                            <small>P</small>
+                            <!-- <small>P</small> -->
                         </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons text-danger">warning</i>
-                            <a href="javascript:void(0)">Updated at.</a>
+                            <i class="material-icons">update</i>
+                            Updated at.
                         </div>
                     </div>
                 </div>
@@ -24,14 +24,15 @@
                 <div class="card card-stats">
                     <div class="card-header card-header-info card-header-icon">
                         <div class="card-icon">
-                            <i class="material-icons">store</i>
+                            <i class="material-icons">content_copy</i>
                         </div>
                         <p class="card-category">Project Detail</p>
                         <h3 class="card-title">3</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">date_range</i>Updated at.
+                            <i class="material-icons">update</i>
+                            Updated at.
                         </div>
                     </div>
                 </div>
@@ -47,7 +48,8 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">local_offer</i> Updated at.
+                            <i class="material-icons">update</i>
+                            Updated at.
                         </div>
                     </div>
                 </div>
@@ -63,115 +65,113 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">update</i> Updated at.
+                            <i class="material-icons">update</i>
+                            Updated at.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="row">
-                <!-- Team list........ -->
-                <div class="col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="card-header card-header-success">
-                            <h4 class="card-title">Team List</h4>
-                        </div>
-                        <div class="card-body table-responsive">
-                            <div class="row">
-                                <!-- <div class="col-md-2">Filter:</div>
+            <!-- Team list........ -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Team List</h4>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="row">
+                            <!-- <div class="col-md-2">Filter:</div>
                                 <div class="col-md-4">
                                     <input type="text" class="input" [(ngModel)]='filter'>
                                 </div> -->
-                            </div>
-                            <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
-                            <table class="table table-hover">
-                                <thead class="text-warning">
-                                    <th> Name</th>
-                                    <th>Skill</th>
-                                    <th>Designation</th>
-                                    <th>Contact Number</th>
-                                </thead>
-                                <tbody>
+                        </div>
+                        <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
+                        <table class="table table-hover">
+                            <thead class="text-warning">
+                                <th> Name</th>
+                                <th>Skill</th>
+                                <th>Designation</th>
+                                <th>Contact</th>
+                            </thead>
+                            <tbody>
 
-                                    <tr *ngFor="let employee of filterEmployee">
-                                        <td *ngIf="true">
-                                            {{employee.name}}
-                                        </td>
-                                        <td *ngIf="true">
-                                            <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
-                                            {{employee.skill}}
-                                            <!-- </a> -->
-                                            <!-- <router-outlet></router-outlet> -->
-                                        </td>
-                                        <td *ngIf="true">
-                                            {{employee.designation}}
-                                        </td>
-                                        <td *ngIf="true">
-                                            {{employee.contact_number}}
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div class="row">
-                                <button type="button" id="button" class="btn btn-primary btn-sm"
-                                    (click)="toggleEmployee()">{{showListEmployee ? 'Hide ': 'See '}}
-                                        More
-                                </button>
-                            </div>
+                                <tr *ngFor="let employee of filterEmployee">
+                                    <td *ngIf="true">
+                                        {{employee.name}}
+                                    </td>
+                                    <td *ngIf="true">
+                                        <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
+                                        {{employee.skill}}
+                                        <!-- </a> -->
+                                        <!-- <router-outlet></router-outlet> -->
+                                    </td>
+                                    <td *ngIf="true">
+                                        {{employee.designation.slice(8,16)}}
+                                    </td>
+                                    <td *ngIf="true">
+                                        {{employee.contact_number}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <button type="button" id="button" class="btn btn-outline-success btn-sm"
+                                (click)="toggleEmployee()">{{showListEmployee ? 'Hide ': 'See '}}
+                                More
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Task list -->
-                <div class="col-lg-6 col-md-6">
-                    <div class="card">
-                        <div class="card-header card-header-success">
-                            <h4 class="card-title ">Team Task</h4>
-                            <!-- <p class="card-category">Here is all task detail</p> -->
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <div class="row">
-                                    <!-- <div class="col-md-2">Filter:</div>
+            <!-- Task list -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title ">Team Task</h4>
+                        <!-- <p class="card-category">Here is all task detail</p> -->
+                    </div>
+                    <div class="card-body table-responsive">
+                        <div class="row">
+                            <!-- <div class="col-md-2">Filter:</div>
                                         <div class="col-md-4">
                                             <input type="text" class="input" [(ngModel)]='taskFilter'>
                                     </div> -->
-                                  </div>
-                                <table class="table">
-                                    <thead class=" text-primary">
-                                        <th>Task</th>
-                                        <th>Assigned to</th>
-                                        <th>Estimated date</th>
-                                        <th>Current Status</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr *ngFor="let task of filterTask">
-                                            <td>
-                                                {{task.task}}
-                                            </td>
-                                            <td>
-                                                {{task.assigned_To}}
-                                            </td>
-                                            <td>
+                        </div>
+                        <table class="table table-hover">
+                            <thead class="text-warning">
+                                <th>Task</th>
+                                <th>Assigned to</th>
+                                <!-- <th>Estimated date</th> -->
+                                <th>Current Status</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let task of filterTask">
+                                    <td>
+                                        {{task.task.slice(0,7)}}
+                                    </td>
+                                    <td>
+                                        {{task.assigned_To}}
+                                    </td>
+                                    <!-- <td>
                                                 {{task.estimated_Date}}
-                                            </td>
-                                            <td>
-                                               {{task.current_Status}}
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <div class="row">
-                                    <button type="button" id="button" class="btn btn-primary btn-sm"
-                                        (click)="toggleTask()">{{showListTask ? 'Hide ': 'See '}}
-                                            More
-                                    </button>
-                                </div>
-                            </div>
+                                            </td> -->
+                                    <td>
+                                        {{task.current_Status}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <button type="button" id="button" class="btn btn-outline-success btn-sm"
+                                (click)="toggleTask()">{{showListTask ? 'Hide ': 'See '}}
+                                More
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

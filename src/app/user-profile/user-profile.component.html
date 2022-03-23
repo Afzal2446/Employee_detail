@@ -1,63 +1,76 @@
 <div class="main-content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-10">
-        <div class="card">
-          <div class="card-header card-header-success">
-              <h4 class="card-title ">Team detail</h4>
-              <p class="card-category">Here is all task of team</p>
-          </div>
-          <div class="card-body">
-            <div class="row">
-                <div class="col-md-2">Filter:</div>
-                    <div class="col-md-4">
-                        <input type="text" class="input" [(ngModel)]='filter'>
-                </div>
-              </div>
-              <div class="table-responsive">
-                  <table class="table table-hover">
-                      <thead class="text-warning">
-                          <th (click)="sortEmployee('name')">Name
-                            &nbsp;
-                            <i class="fa fa-sort"></i>
-                          </th>
-                          <th>Skill</th>
-                          <th (click)="sortEmployee('designation')">Designation&nbsp;
-                            <i class="fa fa-sort"></i>
-                         </th>
-                          <th>Contact Number</th>
-                      </thead>
-                      <tbody>
-                          <tr *ngFor="let employee of filterEmployee">
-                                <td *ngIf="true">
-                                    {{employee.name}}
-                                </td>
-                                <td *ngIf="true">
-                                    <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
-                                    {{employee.skill}}
-                                    <!-- </a> -->
-                                    <!-- <router-outlet></router-outlet> -->
-                                </td>
-                                <td *ngIf="true">
-                                    {{employee.designation}}
-                                </td>
-                                <td *ngIf="true">
-                                    {{employee.contact_number}}
-                                </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
-          <!-- <div class="card-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title ">Team details</h4>
+                        <!-- <p class="card-category">Here is all task of team</p> -->
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-2">Filter:</div>
+                            <div class="col-md-4">
+                                <input type="text" class="input" [(ngModel)]='filter'>
+                            </div>
+                            <button type="button" id="Add" class="btn btn-outline-success btn-sm"
+                                (click)="openDialog()">Add Member
+                            </button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead class="text-warning">
+                                    <th (click)="sortEmployee('name')">Name
+                                        &nbsp;
+                                        <i class="fa fa-sort"></i>
+                                    </th>
+                                    <th>Skill</th>
+                                    <th (click)="sortEmployee('designation')">Designation&nbsp;
+                                        <i class="fa fa-sort"></i>
+                                    </th>
+                                    <th>Contact Number</th>
+                                    <th>Edit/Delete</th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let employee of filterEmployee">
+                                        <td *ngIf="true">
+                                            {{employee.name}}
+                                        </td>
+                                        <td *ngIf="true">
+                                            <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
+                                            {{employee.skill}}
+                                            <!-- </a> -->
+                                            <!-- <router-outlet></router-outlet> -->
+                                        </td>
+                                        <td *ngIf="true">
+                                            {{employee.designation}}
+                                        </td>
+                                        <td *ngIf="true">
+                                            {{employee.contact_number}}
+                                        </td>
+                                        <td>
+                                            <button mat-icon-button>
+                                                <mat-icon>launch</mat-icon>
+                                            </button>
+                                            <button mat-icon-button color="warn"
+                                                (click)="deleteEmployee(employee.name)">
+                                                <mat-icon>delete</mat-icon>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <div class="card-footer">
               <button type="button" class="btn btn-outline-primary" style="width: 100px"
               onclick="onBack()">
                   Back
               </button>
           </div> -->
 
-      </div>
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
