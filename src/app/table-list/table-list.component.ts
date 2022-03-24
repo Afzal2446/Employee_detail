@@ -71,12 +71,13 @@ export class TableListComponent implements OnInit {
     })
   }
   deleteTask(id: number) {
-    console.warn(id);
     this.empData.taskDelete(id).subscribe(res => {
       // console.warn(res);
-      this.getData();
-      console.warn(this.filterTask);
+      // this.getData();
+      // console.warn(this.filterTask);
     })
+    this.getData();
+    console.warn(this.filterTask);
     // fetch('http://10.1.113.124:82/api/Task?eid='+id).then(()=> {
     //   this.getData()
     // }).catch((e)=> {

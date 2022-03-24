@@ -15,11 +15,11 @@ export class UpdateTaskComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  postData(data: any) {
+  updateData(data: any) {
     console.warn("button Works");
-    // console.warn(data);
+    console.warn(data);
     this.empData.taskUpdate(data).subscribe((res: any) => {
-      console.warn("Post method is" + res);
+      console.warn("Put method is " + res);
     });
   }
 }

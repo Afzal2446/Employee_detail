@@ -39,10 +39,8 @@ export class EmpDataService {
     return this.http.put(this.taskUrl, data);
   }
   taskDelete(id: number) {
-    console.warn("taskDelete functiuon called");
-    console.warn(id);
-    let data = { body: { "eid": id } };
-    return this.http.delete(this.taskUrl, data);
+    // let data = { body: { "eid": id } };
+    return this.http.delete(this.taskUrl+"?Id="+id);
   }
 
   //Environment Services..........

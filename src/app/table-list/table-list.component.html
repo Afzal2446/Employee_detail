@@ -22,21 +22,21 @@
                                 <th (click)="sortTask('task')">Task&nbsp;
                                     <i class="fa fa-sort"></i>
                                 </th>
-                                <th>Description
-
-                                </th>
                                 <th (click)="sortTask('assigned_To')">&nbsp;
                                     Assigned
                                     <i class="fa fa-sort"></i>
                                 </th>
                                 <th>
+                                    End Date
+                                </th>
+                                <th>
                                     Status
                                 </th>
                                 <th>
-                                    Environment
+                                    Description
                                 </th>
                                 <th>
-                                    End Date
+                                    Environment
                                 </th>
                                 <th>
                                     Edit/Delete
@@ -48,19 +48,19 @@
                                         {{task.task}}
                                     </td>
                                     <td>
-                                        Description
+                                        {{task.assigned_To}}
                                     </td>
                                     <td>
-                                        {{task.assigned_To}}
+                                        {{task.estimated_Date}}
                                     </td>
                                     <td>
                                         {{task.current_Status}}
                                     </td>
                                     <td>
-                                        Environment
+                                        {{task.descr}}
                                     </td>
                                     <td>
-                                        {{task.estimated_Date}}
+                                        {{task.env_}}
                                     </td>
                                     <td>
                                         <button mat-icon-button (click)="updateTask(task.eid)">
