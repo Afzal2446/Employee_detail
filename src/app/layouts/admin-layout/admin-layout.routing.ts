@@ -6,6 +6,7 @@ import { TableListComponent } from '../../table-list/table-list.component';
 import { typographyComponent } from '../../environment/typography.component';
 import { ListEnvironmentComponent } from 'app/list-environment/list-environment.component';
 import { EmployeeDataComponent } from 'app/user-profile/employee-data/employee-data.component';
+import { UpdateTaskComponent } from 'app/table-list/update-task/update-task.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {

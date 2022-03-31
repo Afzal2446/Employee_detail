@@ -24,7 +24,7 @@ export class EmployeeDataComponent implements OnInit {
       console.warn("Post method is"+res);
     });
   }
-  onClose() {
-    this.matDialogRef.close();
-  }
+  // onClose() {
+  //   this.matDialogRef.close();
+  // }
 }

@@ -70,25 +70,17 @@ export class TableListComponent implements OnInit {
       }
     })
   }
-  deleteTask(id: number) {
-    this.empData.taskDelete(id).subscribe(res => {
-      // console.warn(res);
-      // this.getData();
-      // console.warn(this.filterTask);
-    })
-    this.getData();
-    console.warn(this.filterTask);
-    // fetch('http://10.1.113.124:82/api/Task?eid='+id).then(()=> {
-    //   this.getData()
-    // }).catch((e)=> {
-    //   console.error(e)
-    // })
-  }
-  updateTask(){
-    console.log("Update Button Works!");
+  // deleteTask(id: number) {
+  //   this.empData.taskDelete(id).subscribe(res => {
+  //   })
+  //   this.getData();
+  // }
+  updateTask(id:number){
+    console.log(id);
     let dialogConfig=new MatDialogConfig();
     dialogConfig.height = '500px';
     dialogConfig.width = '500px';
+    dialogConfig.data = this.filterTask.find((task: any)=>{return task.eid == id});
     let dialog = this.matDialog.open(UpdateTaskComponent,dialogConfig);
   }
   openDialog() {

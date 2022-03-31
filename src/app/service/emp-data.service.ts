@@ -13,6 +13,10 @@ export class EmpDataService {
   public teamUrl = "http://10.1.113.124:82/api/Team";
   public taskUrl = "http://10.1.113.124:82/api/Task";
   public environmentUrl = "http://10.1.113.124:82/api/Environment";
+  public specificLabDataUrl="http://10.1.113.124:82/api/LabData/";
+  public labData="http://10.1.113.124:82/api/LabData/lab1";
+  // https://mocki.io/v1/c7efbc44-8ace-4be2-8c4b-2c3f0d76900b
+  //http://10.1.113.124:82/api/LabData/lab1
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +25,10 @@ export class EmpDataService {
     return this.http.get<employeeData[]>(this.teamUrl);
   }
   employeePost(data: any) {
-    return this.http.post(this.teamUrl, JSON.stringify(data));
+    return this.http.post(this.teamUrl, data);
   }
-  employeeDelete(name: string) {
-    return this.http.delete(this.teamUrl);
+  employeeDelete(id:number) {
+    return this.http.delete(this.teamUrl+"?Id="+id);
   }
 
   //Task Services............
@@ -32,7 +36,6 @@ export class EmpDataService {
     return this.http.get<taskData[]>(this.taskUrl);
   }
   taskPost(data: any) {
-    console.log(data);
     return this.http.post(this.taskUrl, data);
   }
   taskUpdate(data: any) {
@@ -47,9 +50,21 @@ export class EmpDataService {
   environment(): Observable<any[]> {
     return this.http.get<any[]>(this.environmentUrl);
   }
-  // saveUsers(data:any){
-  //   return this.http.post(this.url, data);
+  
+  // firstLab="QALab1";
+  // initialShowEnvironment():Observable<any[]>{
+  //   return this.http.get<any[]>(this.environmentUrl+"/"+this.firstLab)
   // }
+  getEnvironmentByName(name:string):Observable<any[]>{
+    return this.http.get<any[]>(this.environmentUrl+"/"+name);
+  }
+  initialShowData():Observable<any[]>{
+    return this.http.get<any[]>(this.labData);
+  }
+  getLabData(name:string):Observable<any[]>{
+    return this.http.get<any[]>(this.specificLabDataUrl+name);
+  }
+ 
   private selectedEmployee: any;
   setSelectedEmployee(employee: any) {
     this.selectedEmployee = employee;
@@ -67,12 +82,21 @@ export class EmpDataService {
     return this.selectedTask;
   }
 
-  private selectedEnvironment: any;
+ private selectedEnvironment;
   setSelectedEnvironment(insertEnv: any) {
     this.selectedEnvironment = insertEnv;
-    // console.log(insertEnv);
+    // console.log(typeof this.selectedEnvironment);
+    // console.log(this.selectedEnvironment);
   }
   getSelectedEnvironment() {
     return this.selectedEnvironment;
+  }
+
+  private value;
+  setValue(){
+    this.value=true;
+  }
+  getValue(){
+    return this.value;
   }
 }

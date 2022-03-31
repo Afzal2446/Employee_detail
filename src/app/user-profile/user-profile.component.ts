@@ -56,16 +56,25 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit():void {
     this._filter='';
+    this.getData();
     // this.filterEmployee=[...this.employees];
+    // this.empData.employee().subscribe({
+    //   next:employees=>{
+    //     this.employees=employees;
+    //     // console.log("API is working fine");
+    //     // console.warn(this.employees);
+    //     this.filterEmployee=[...this.employees];
+    //     // this.filterEmployee = this.filterEmployee.splice(0, 3);
+    //     // console.log("API is working fine");
+    //     // console.warn(this.filterEmployee);
+    //   }
+    // });
+  }
+  getData(){
     this.empData.employee().subscribe({
       next:employees=>{
         this.employees=employees;
-        // console.log("API is working fine");
-        // console.warn(this.employees);
         this.filterEmployee=[...this.employees];
-        // this.filterEmployee = this.filterEmployee.splice(0, 3);
-        // console.log("API is working fine");
-        // console.warn(this.filterEmployee);
       }
     });
   }
@@ -85,11 +94,11 @@ export class UserProfileComponent implements OnInit {
       // console.log(res);
     });
   }
-  deleteEmployee(name:string){
-    this.empData.employeeDelete(name).subscribe((res:any)=>{
-      // console.warn(res);
-    })
-  }
+  // deleteEmployee(id:number){
+  //   this.empData.employeeDelete(id).subscribe(res => {
+  //   })
+  //   this.getData();
+  // }
   // addMember(){
   //   console.warn("Add member click");
   //   this.matDialog.open(EmployeeDataComponent);

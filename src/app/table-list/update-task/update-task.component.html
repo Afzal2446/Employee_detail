@@ -1,22 +1,22 @@
 <div class="container">
     <div class="inputs">
-      <form #userForm="ngForm" (ngSubmit)="updateData(userForm.value)">
+      <form>
         <label>Task</label>
-        <input type="text" ngModel name="Task" placeholder="Enter Employee Task" />
+        <input type="text" [(ngModel)]="ValueObject.task" name="assigned_To" placeholder="Enter Employee Task" />
         <label>Assigned</label>
-        <input type="text" ngModel name="Assigned_To" placeholder="Enter Assigned Employee" />
+        <input type="text" [(ngModel)]="ValueObject.assigned_To" name="Assigned_To" placeholder="Enter Assigned Employee" />
         <label>End Date</label>
-        <input type="date" ngModel name="Estimated_Date" placeholder="Enter End Date" />
+        <input type="date" [(ngModel)]="ValueObject.estimated_Date" name="Estimated_Date" placeholder="Enter End Date" />
         <label>Status</label>
-        <input type="text" ngModel name="Current_Status" placeholder="Enter Task Status" />
+        <input type="text" [(ngModel)]="ValueObject.current_Status" name="Current_Status" placeholder="Enter Task Status" />
         <label>Description</label>
-        <input type="text" name="Descr" placeholder="Enter Description" />
+        <input type="text" [(ngModel)]="ValueObject.task" name="Descr" placeholder="Enter Description" />
         <label>Environment</label>
-        <input type="text" name="env_" placeholder="Enter Environment" />
+        <input type="text" [(ngModel)]="ValueObject.env_" name="env_" placeholder="Enter Environment" />
         
   
-        <button type="submit" class="submitButton">Submit</button>
-        <button type="reset" class="cancelButton">Cancel</button>
+        <button (click)="updateData(ValueObject)" class="submitButton">Submit</button>
+        <button (click)="close()" class="cancelButton">Cancel</button>
       </form>
     </div>
   </div>

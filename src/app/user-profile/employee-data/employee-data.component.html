@@ -2,16 +2,16 @@
   <div class="inputs">
     <form #userForm="ngForm" (ngSubmit)="postData(userForm.value)">
       <label>Name</label>
-      <input type="text" ngModel name="name" placeholder="Enter Employee Name" />
+      <input type="text" ngModel name="Name" placeholder="Enter Employee Name" />
       <label>Skill</label>
-      <input type="text" ngModel name="skill" placeholder="Enter Employee Skill" />
+      <input type="text" ngModel name="Skill" placeholder="Enter Employee Skill" />
       <label>Designation</label>
-      <input type="text" ngModel name="desgination" placeholder="Enter Employee Designation" />
+      <input type="text" ngModel name="Designation" placeholder="Enter Employee Designation" />
       <label>Contact</label>
-      <input type="text" ngModel name="contact" placeholder="Enter Employee Contact Number" />
+      <input type="text" ngModel name="Contact_Number" placeholder="Enter Employee Contact Number" />
 
       <button type="submit" class="submitButton">Submit</button>
-    </form>
-    <button type="reset" class="cancelButton">Cancel</button>
+      <button type="reset" class="cancelButton">Cancel</button>
+    </form>   
   </div>
 </div>

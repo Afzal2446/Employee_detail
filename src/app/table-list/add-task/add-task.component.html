@@ -10,14 +10,20 @@
       <label>Status</label>
       <input type="text" ngModel name="Current_Status" placeholder="Enter Task Status" />
       <label>Description</label>
-      <input type="text" name="Descr" placeholder="Enter Description" />
+      <input type="text" ngModel name="Descr" placeholder="Enter Description" />
       <label>Environment</label>
-      <input type="text" name="env_" placeholder="Enter Environment" />
-      
-
+      <input type="text" ngModel name="Env_" placeholder="Enter Environment" />
       <button type="submit" class="submitButton">Submit</button>
       <button type="reset" class="cancelButton">Cancel</button>
     </form>
 
+    <!-- {
+    "Task":"API development",
+    "Assigned_To":"Shubhankit",
+    "Estimated_Date":'2021-08-14T00:00:00',
+    "Current_Status":"Complete",
+    "Descr":"Development",
+    "Env_":"QALab1"
+    } -->
   </div>
 </div>

@@ -2,48 +2,39 @@
     <div class="container-fluid">
         <div class="row">
             <!-- Team list........ -->
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
                         <h4 class="card-title">Configuration</h4>
                     </div>
                     <div class="card-body table-responsive">
-                        <div class="row">
+                        <div class="row" *ngIf="value">
                             <input type="text" class="inputFilter" placeholder="select one" [(ngModel)]="searchText"
                                 [matAutocomplete]="auto" (keyup)="filter()">
 
                             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onMenuSelected($event.option)">
-                                <mat-option *ngFor="let environment of environments" [value]="environment.Name">
-                                    {{environment.Name}}
+                                <mat-option *ngFor="let environment of environments" [value]="environment.labData">
+                                    {{environment.labData}}
                                 </mat-option>
                             </mat-autocomplete>
                         </div>
                         <!-- <ngx-org-chart [nodes]="nodes" direction="vertical"></ngx-org-chart> -->
                         <table class="table table-hover">
-                            <thead class="text-warning"> 
-                                <th>Env Name</th>
-                                <th>IP</th>
-                                <th>Version</th>
-                                <th>DB</th>
-                                <!-- <th>Current Task</th>
-                            <th>Status</th> -->
+                            <thead class="text-warning">
+                                <th>Environment</th>
+                                <th>Keys</th>
+                                <th>Values</th>
                             </thead>
                             <tbody>
-                                <tr>
+                                <tr *ngFor="let data of labData">
                                     <td>
-                                        <!-- <a routerLink="/icons" (click)="onEmployeeSelected(employee)"> -->
-                                        {{resultArray.name}}
-                                        <!-- </a> -->
-                                        <!-- <router-outlet></router-outlet> -->
+                                        {{data.environment_Data}}
                                     </td>
                                     <td>
-                                        {{resultArray.title}}
+                                        {{data.keys_}}
                                     </td>
                                     <td>
-                                        {{resultArray.version}}
-                                    </td>
-                                    <td>
-                                        {{resultArray.db}}
+                                        {{data.values_}}
                                     </td>
                                 </tr>
                             </tbody>

@@ -46,14 +46,14 @@
                                             {{employee.designation}}
                                         </td>
                                         <td *ngIf="true">
-                                            {{employee.contact_number}}
+                                            {{employee.contact_Number}}
                                         </td>
                                         <td>
                                             <button mat-icon-button>
                                                 <mat-icon>launch</mat-icon>
                                             </button>
                                             <button mat-icon-button color="warn"
-                                                (click)="deleteEmployee(employee.name)">
+                                                (click)="deleteEmployee(employee.id)">
                                                 <mat-icon>delete</mat-icon>
                                             </button>
                                         </td>

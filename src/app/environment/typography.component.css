@@ -1,9 +1,7 @@
-.input{
-    border-radius: 13px;
-    width: 250px;
-    border-color: green;
-}
 .ngx-org-self-vertical[_ngcontent-dvw-c30] {
     /* margin-bottom: 2%; */
-    margin-top: 2%;
+    margin-top: 10%;
+}
+.typography{
+    margin-top: 40px;
 }
