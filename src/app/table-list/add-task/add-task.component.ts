@@ -16,10 +16,11 @@ export class AddTaskComponent implements OnInit {
   ngOnInit(): void {
   }
   postData(data: any) {
-    console.warn("button Works");
-    // console.warn(data);
     this.empData.taskPost(data).subscribe((res: any) => {
-      console.warn("Post method is" + res);
+      this.matDialogRef.close();
     });
+  }
+  close(){
+    this.matDialogRef.close();
   }
 }

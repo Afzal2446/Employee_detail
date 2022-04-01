@@ -13,35 +13,7 @@ export class ListEnvironmentComponent implements OnInit {
 
   
   constructor(private empData: EmpDataService, private router: Router) {}
-    // console.log(this.environments);
-    //   console.log(this.resultArray)
-    //    this.resultArray = Object.keys(this.resultArray).map(index => {
-    //     let envList = this.resultArray[index];
-    //     return {
-    //       index: envList
-    //     };
-    // });
-    // console.warn(this.resultArray);
-    // console.warn(typeof this.resultArray);
-    // console.warn((this.resultArray).childs);
   
-  // environments = [
-  //   {
-  //     "Name": "Vishal Babu Meriga",
-  //     childData: [
-  //       {
-  //       "title":"jask",
-  //     }
-  //     ]
-  //   },
-  //   {
-  //     "Name": "Dhiraj Kumar Bairagi"
-  //   },
-  //   {
-  //     "Name": "Shaik Karimulla"
-  //   }
-  // ];
-  // environments: any[];
   environmentsCopy: any;
   searchText: string = '';
   selectedItem: any;

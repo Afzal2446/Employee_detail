@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject, ViewChild} from '@angular/core';
+import { Component, OnInit, Inject, ViewChild } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EmpDataService } from 'app/service/emp-data.service';
 
@@ -8,7 +8,7 @@ import { EmpDataService } from 'app/service/emp-data.service';
   styleUrls: ['./update-task.component.css']
 })
 export class UpdateTaskComponent implements OnInit {
-  
+
   ValueObject: any = {};
 
   constructor(private matDialogRef: MatDialogRef<UpdateTaskComponent>,
@@ -17,15 +17,16 @@ export class UpdateTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.ValueObject = this.data;
+    console.log(this.ValueObject.estimated_Date);
+    // this.date=new Date();
     this.ValueObject.estimated_Date = new Date(this.ValueObject.estimated_Date);
-    console.log(this.ValueObject)
+    console.log(this.ValueObject.estimated_Date);
   }
 
   updateData(data: any) {
     console.warn("button Works");
     console.warn(data);
     this.empData.taskUpdate(data).subscribe((res: any) => {
-      console.warn("Put method is " + res);
       this.matDialogRef.close();
     });
   }

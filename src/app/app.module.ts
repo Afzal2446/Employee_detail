@@ -24,6 +24,7 @@ import { NgxOrgChartModule } from 'ngx-org-chart';
 import { EmployeeDataComponent } from './user-profile/employee-data/employee-data.component';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import {MatButtonModule} from '@angular/material/button';
+import { UpdateTeamComponent } from './user-profile/update-team/update-team.component';
 // import { UpdateTaskComponent } from './table-list/update-task/update-task.component';
 // import { AddTaskComponent } from './table-list/add-task/add-task.component';
 @NgModule({
@@ -45,6 +46,7 @@ import {MatButtonModule} from '@angular/material/button';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    
     // UpdateTaskComponent,
     // AddTaskComponent,
     // EmployeeDataComponent,

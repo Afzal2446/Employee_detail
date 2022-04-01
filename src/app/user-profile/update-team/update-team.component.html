@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="inputs">
+      <form>
+        <label>Name</label>
+        <input type="text" [(ngModel)]="ValueObject.name" name="Name" placeholder="Enter Employee Name" />
+        <label>Skill</label>
+        <input type="text" [(ngModel)]="ValueObject.skill" name="Skill" placeholder="Enter Employee Skill" />
+        <label>Designation</label>
+        <input type="text" [(ngModel)]="ValueObject.designation" name="Designation" placeholder="Enter Employee Designation" />
+        <label>Contact</label>
+        <input type="text" [(ngModel)]="ValueObject.contact_Number" name="Contact_Number" placeholder="Enter Employee Contact Number" />
+  
+        <button (click)="updateData(ValueObject)" class="submitButton">Submit</button>
+        <button (click)="close()" class="cancelButton">Cancel</button>
+      </form>   
+    </div>
+  </div>

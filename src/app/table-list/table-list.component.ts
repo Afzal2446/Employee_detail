@@ -76,7 +76,6 @@ export class TableListComponent implements OnInit {
   //   this.getData();
   // }
   updateTask(id:number){
-    console.log(id);
     let dialogConfig=new MatDialogConfig();
     dialogConfig.height = '500px';
     dialogConfig.width = '500px';
@@ -95,7 +94,6 @@ export class TableListComponent implements OnInit {
     let dialog = this.matDialog.open(AddTaskComponent,dialogConfig);
 
     dialog.afterClosed().subscribe((res: any) => {
-      console.log(res);
     });
   }
 }

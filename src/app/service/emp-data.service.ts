@@ -30,6 +30,9 @@ export class EmpDataService {
   employeeDelete(id:number) {
     return this.http.delete(this.teamUrl+"?Id="+id);
   }
+  employeeUpdate(data:any){
+    return this.http.put(this.teamUrl,data)
+  }
 
   //Task Services............
   task(): Observable<taskData[]> {

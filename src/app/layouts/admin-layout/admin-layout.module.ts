@@ -21,6 +21,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { NgxOrgChartModule } from 'ngx-org-chart';
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import {MatIconModule} from '@angular/material/icon';
+import { UpdateTeamComponent } from 'app/user-profile/update-team/update-team.component';
 
 
 // import { DropDownListModule } from '@syncfusion/ej2-angular-dropdowns';
@@ -51,7 +52,8 @@ import {MatIconModule} from '@angular/material/icon';
     ListEnvironmentComponent,
     EmployeeDataComponent,
     AddTaskComponent,
-    UpdateTaskComponent
+    UpdateTaskComponent,
+    UpdateTeamComponent
   ]
 })
 

@@ -4,6 +4,7 @@ import { employeeData } from 'app/dashboard/employee';
 import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
 import { EmployeeDataComponent } from './employee-data/employee-data.component';
 import { Router } from '@angular/router';
+import { UpdateTeamComponent } from './update-team/update-team.component';
 
 @Component({
   selector: 'app-user-profile',
@@ -78,7 +79,13 @@ export class UserProfileComponent implements OnInit {
       }
     });
   }
-
+  updateEmployee(id:number){
+    let dialogConfig=new MatDialogConfig();
+    dialogConfig.height = '500px';
+    dialogConfig.width = '500px';
+    dialogConfig.data = this.filterEmployee.find((employees: any)=>{return employees.id == id});
+    let dialog = this.matDialog.open(UpdateTeamComponent,dialogConfig);
+  }
   openDialog() {
     console.log("dilog works");
     let dialogConfig = new MatDialogConfig();

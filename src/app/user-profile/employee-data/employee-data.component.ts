@@ -18,13 +18,12 @@ export class EmployeeDataComponent implements OnInit {
   ngOnInit(): void {
   }
   postData(data: any) {
-    console.warn("button Works");
-    console.warn(data);
-    this.empData.employeePost(data).subscribe((res:any)=> {
-      console.warn("Post method is"+res);
+    console.log(data);
+    this.empData.employeePost(data).subscribe((res:any)=> { 
+      this.matDialogRef.close();
     });
   }
-  // onClose() {
-  //   this.matDialogRef.close();
-  // }
+  close() {
+    this.matDialogRef.close();
+  }
 }
