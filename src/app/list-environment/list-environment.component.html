@@ -1,14 +1,19 @@
 <div class="main-content">
     <div class="container-fluid">
+        <button type="button" id="Add" class="btn btn-success" (click)="goBack()">
+            Back
+        </button>
         <div class="row">
             <!-- Team list........ -->
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title">Configuration</h4>
+                        <h4 class="card-title">{{labName}}</h4>
                     </div>
                     <div class="card-body table-responsive">
-                        <div class="row" *ngIf="value">
+                        <div class="row">
+                            <div><button type="button" id="AddTask" class="btn btn-outline-success btn-sm" (click)="openDialog()">Add Task
+                                </button></div>
                             <input type="text" class="inputFilter" placeholder="select one" [(ngModel)]="searchText"
                                 [matAutocomplete]="auto" (keyup)="filter()">
 
@@ -24,6 +29,7 @@
                                 <th>Environment</th>
                                 <th>Keys</th>
                                 <th>Values</th>
+                                <th>Edit</th>
                             </thead>
                             <tbody>
                                 <tr *ngFor="let data of labData">
@@ -35,6 +41,11 @@
                                     </td>
                                     <td>
                                         {{data.values_}}
+                                    </td>
+                                    <td>
+                                        <button mat-icon-button (click)="updateLab(data.id)">
+                                            <mat-icon>launch</mat-icon>
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>

@@ -26,9 +26,9 @@
                                     Assigned
                                     <i class="fa fa-sort"></i>
                                 </th>
-                                <th>
+                                <!-- <th>
                                     End Date
-                                </th>
+                                </th> -->
                                 <th>
                                     Status
                                 </th>
@@ -39,7 +39,7 @@
                                     Environment
                                 </th>
                                 <th>
-                                    Edit/Delete
+                                    Edit
                                 </th>
                             </thead>
                             <tbody>
@@ -50,9 +50,9 @@
                                     <td>
                                         {{task.assigned_To}}
                                     </td>
-                                    <td>
+                                    <!-- <td>
                                         {{task.estimated_Date}}
-                                    </td>
+                                    </td> -->
                                     <td>
                                         {{task.current_Status}}
                                     </td>
@@ -66,9 +66,9 @@
                                         <button mat-icon-button (click)="updateTask(task.eid)">
                                             <mat-icon>launch</mat-icon>
                                         </button>
-                                        <button mat-icon-button color="warn" (click)="deleteTask(task.eid)">
+                                        <!-- <button mat-icon-button color="warn" (click)="deleteTask(task.eid)">
                                             <mat-icon>delete</mat-icon>
-                                        </button>
+                                        </button> -->
                                     </td>
                                 </tr>
                             </tbody>

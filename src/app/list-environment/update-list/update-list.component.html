@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="inputs">
+    <form>
+      <label>Environment</label>
+      <input type="text" [(ngModel)]="ValueObject.environment_Data" name="environment_Data"
+        placeholder="Enter Environment Data" />
+      <label>Keys</label>
+      <input type="text" [(ngModel)]="ValueObject.keys_" name="keys_" placeholder="Enter Keys" />
+      <label>Values</label>
+      <input type="text" [(ngModel)]="ValueObject.values_" name="values_" placeholder="Enter Values" />
+
+
+      <button (click)="updateData(ValueObject)" class="submitButton">Submit</button>
+      <button (click)="close()" class="cancelButton">Cancel</button>
+    </form>
+  </div>
+</div>

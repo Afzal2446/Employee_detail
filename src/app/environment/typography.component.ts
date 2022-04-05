@@ -77,7 +77,7 @@ export class typographyComponent implements OnInit {
     // console.log(bracketSplice);
     this.empData.getEnvironmentByName(bracketSplice).subscribe(res=>{
       this.empData.setSelectedEnvironment(res);
-      this.empData.setValue();
+      this.empData.setValue($event.name);
     })
     this.router.navigateByUrl('/listEnvironment');
     // let passData;

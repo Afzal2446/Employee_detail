@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="inputs">
+      <form #userForm="ngForm" (ngSubmit)="postData(userForm.value)">
+        <label>Environment</label>
+        <input type="text" ngModel name="Environment_Data" placeholder="Enter Environment Data" />
+        <label>Keys</label>
+        <input type="text" ngModel name="Keys_" placeholder="Enter Keys" />
+        <label>Values</label>
+        <input type="text" ngModel name="Values_" placeholder="Enter Values" />
+  
+        <button type="submit" class="submitButton">Submit</button>
+        
+      </form>   
+      <button (click)="close()" class="cancelButton">Cancel</button>
+    </div>
+  </div>
+  <!-- {
+    "Environment_Data":"Lab1",
+    "Keys_":"lab one gaming",
+    "Values_":"True"
+    } -->

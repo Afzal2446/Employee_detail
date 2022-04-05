@@ -13,8 +13,10 @@ export class EmpDataService {
   public teamUrl = "http://10.1.113.124:82/api/Team";
   public taskUrl = "http://10.1.113.124:82/api/Task";
   public environmentUrl = "http://10.1.113.124:82/api/Environment";
-  public specificLabDataUrl="http://10.1.113.124:82/api/LabData/";
-  public labData="http://10.1.113.124:82/api/LabData/lab1";
+  public specificLabDataUrl="http://10.1.113.124:82/api/LabData";
+  public labUpdateUrl="http://10.1.113.124:82/api/LabData/api/Employee/Edit";
+  // http://10.1.113.124:82/api/LabData
+  // public labData="http://10.1.113.124:82/api/LabData/lab1";
   // https://mocki.io/v1/c7efbc44-8ace-4be2-8c4b-2c3f0d76900b
   //http://10.1.113.124:82/api/LabData/lab1
 
@@ -61,11 +63,17 @@ export class EmpDataService {
   getEnvironmentByName(name:string):Observable<any[]>{
     return this.http.get<any[]>(this.environmentUrl+"/"+name);
   }
-  initialShowData():Observable<any[]>{
-    return this.http.get<any[]>(this.labData);
-  }
+  // initialShowData():Observable<any[]>{
+  //   return this.http.get<any[]>(this.labData);
+  // }
   getLabData(name:string):Observable<any[]>{
-    return this.http.get<any[]>(this.specificLabDataUrl+name);
+    return this.http.get<any[]>(this.specificLabDataUrl+"/"+name);
+  }
+  updateLab(data){
+    return this.http.put(this.labUpdateUrl,data);
+  }
+  postLab(data){
+    return this.http.post(this.specificLabDataUrl,data);
   }
  
   private selectedEmployee: any;
@@ -95,11 +103,11 @@ export class EmpDataService {
     return this.selectedEnvironment;
   }
 
-  private value;
-  setValue(){
-    this.value=true;
+  private labName;
+  setValue(data){
+    this.labName=data;
   }
   getValue(){
-    return this.value;
+    return this.labName;
   }
 }

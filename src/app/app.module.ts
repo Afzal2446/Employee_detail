@@ -25,6 +25,8 @@ import { EmployeeDataComponent } from './user-profile/employee-data/employee-dat
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import {MatButtonModule} from '@angular/material/button';
 import { UpdateTeamComponent } from './user-profile/update-team/update-team.component';
+
+
 // import { UpdateTaskComponent } from './table-list/update-task/update-task.component';
 // import { AddTaskComponent } from './table-list/add-task/add-task.component';
 @NgModule({
@@ -45,7 +47,7 @@ import { UpdateTeamComponent } from './user-profile/update-team/update-team.comp
   ],
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
+    AdminLayoutComponent
     
     // UpdateTaskComponent,
     // AddTaskComponent,

@@ -3,6 +3,9 @@ import { EmpDataService } from 'app/service/emp-data.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { TransitionCheckState } from '@angular/material/checkbox';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog'
+import { UpdateListComponent } from './update-list/update-list.component';
+import { AddListComponent } from './add-list/add-list.component';
 
 @Component({
   selector: 'app-list-environment',
@@ -11,23 +14,23 @@ import { TransitionCheckState } from '@angular/material/checkbox';
 })
 export class ListEnvironmentComponent implements OnInit {
 
-  
-  constructor(private empData: EmpDataService, private router: Router) {}
-  
+
+  constructor(private empData: EmpDataService, private router: Router,private matDialog: MatDialog) { }
+
   environmentsCopy: any;
   searchText: string = '';
   selectedItem: any;
-  environments:any[];
-  labData:any;
-  value:false;
+  environments: any[];
+  labData: any;
+  labName: any;
 
-  getData(){
+  getData() {
     this.environments = this.empData.getSelectedEnvironment();
-    this.empData.getLabData(this.environments[0].labData).subscribe(res=>{
-      this.labData=res;
+    this.empData.getLabData(this.environments[0].labData).subscribe(res => {
+      this.labData = res;
     })
-    this.value=this.empData.getValue();
-    console.warn(this.value);
+    this.labName = this.empData.getValue();
+    console.warn(this.labName);
     // console.warn(this.environments[0].labData);
     this.environmentsCopy = [...this.environments];
   }
@@ -38,17 +41,15 @@ export class ListEnvironmentComponent implements OnInit {
   //   })
   //   this.environmentsCopy = [...this.environments];
   // }
-  initialShowData(){
-    this.empData.initialShowData().subscribe(res=>{
-      this.labData=res;
-    });
-    // this.initialShowEnv();
-    setTimeout(() => {this.getData();}, 200);
-  }
+  // initialShowData(){
+  //   this.empData.initialShowData().subscribe(res=>{
+  //     this.labData=res;
+  //   });
+  // this.initialShowEnv();
 
   ngOnInit(): void {
-    this.initialShowData();
-    
+    setTimeout(() => { this.getData(); }, 200);
+
     // setTimeout(() => {this.initialShowData();}, 1000);
     // this.getData();
     // console.log("Service called")
@@ -61,15 +62,41 @@ export class ListEnvironmentComponent implements OnInit {
       return target.labData.toLowerCase().includes(this.searchText.toLowerCase())
     });
     this.environments = environmentsNew;
-    }
+  }
 
   onMenuSelected(event: any) {
     this.selectedItem = this.environmentsCopy.find((target: any) => {
       return target.labData.toLowerCase().includes(event.value.toLowerCase())
     });
     // console.warn(this.selectedItem.labData);
-    this.labData=this.empData.getLabData(this.selectedItem.labData).subscribe(res=>{
-      this.labData=res;
+    this.labData = this.empData.getLabData(this.selectedItem.labData).subscribe(res => {
+      this.labData = res;
     })
+  }
+  goBack() {
+    console.log("Back button works");
+    this.router.navigateByUrl("/typography");
+  }
+  openDialog() {
+    console.log("dilog works");
+    let dialogConfig = new MatDialogConfig();
+    dialogConfig.height = '450px';
+    dialogConfig.width = '420px';
+    // dialogConfig.data = {
+    //   employee:employee
+    // };
+
+    let dialog = this.matDialog.open(AddListComponent, dialogConfig);
+
+    dialog.afterClosed().subscribe((res: any) => {
+      // console.log(res);
+    });
+  }
+  updateLab(id:number){
+    let dialogConfig=new MatDialogConfig();
+    dialogConfig.height = '450px';
+    dialogConfig.width = '420px';
+    dialogConfig.data = this.labData.find((labData: any)=>{return labData.id == id});
+    let dialog = this.matDialog.open(UpdateListComponent,dialogConfig);
   }
 }
